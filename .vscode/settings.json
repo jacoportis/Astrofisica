@@ -1,0 +1,13 @@
+{
+   "cSpell.ignoreWords": [
+      "Cefeidi",
+      "fotoionizzazione",
+      "metallicità",
+      "planckiana",
+      "riconnessione",
+      "trasmittanza"
+   ],
+   "files.associations": {
+      "Temperatura.C": "cpp"
+   }
+}
