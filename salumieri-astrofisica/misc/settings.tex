@@ -1,0 +1,34 @@
+\settrims{0pt}{0pt}
+\settypeblocksize{*}{1.1\lxvchars}{*}
+\setbinding{1.5cm}
+\setlrmargins{*}{*}{4}
+\setulmarginsandblock{1in}{*}{2}
+\checkandfixthelayout
+
+\sideparmargin{outer}
+\setmarginnotes{0.1\foremargin}{0.7\foremargin}{\onelineskip}
+\aliaspagestyle{chapter}{empty}             % default \pagestyle{chapter} = \pagesstyle{plain} mette il numero al centro in basso.
+
+\setlength{\headwidth}{\textwidth}
+    \addtolength{\headwidth}{\marginparsep}
+    \addtolength{\headwidth}{\marginparwidth}
+
+\makepagestyle{own}
+    \makerunningwidth{own}{\headwidth}
+    \makeheadrule{own}{\headwidth}{\normalrulethickness}
+    \makeheadposition{own}{flushright}{flushleft}{flushright}{flushleft}
+    \makepsmarks{own}{%
+        \nouppercaseheads
+        \createmark{chapter}{both}{shownumber}{\chaptername\ }{.\ }
+        \createmark{section}{right}{shownumber}{}{.\ }
+        \createplainmark{toc}{both}{\contentsname}
+        \createplainmark{lof}{both}{\listfigurename}
+        \createplainmark{lot}{both}{\listtablename}
+        \createplainmark{bib}{both}{\bibname}
+        \createplainmark{index}{both}{\indexname}
+        \createplainmark{glossary}{both}{\glossaryname}    
+    }
+    \makeevenhead{own}{\bfseries\thepage}{}{\bfseries\leftmark}
+    \makeoddhead{own}{\bfseries\rightmark}{}{\bfseries \thepage}
+    \makeevenfoot{own}{}{}{\footnotesize \theauthor}
+    \makeoddfoot{own}{\footnotesize \theauthor}{}{}

@@ -1,0 +1,44 @@
+Il primo metodo di classificazione delle stelle fu la fotometria, introdotta da Ipparco nel 129 A.C., che immaginò di dividerle in 6 classi di magnitudini: le più brillanti le definì di \textit{prima magnitudine}, mentre le meno brillanti all'occhio umano \textit{di sesta magnitudine}.
+
+Pogson fu il primo però, nel 1856, a quantificare in maniera oggettiva il sistema di magnitudine di Ipparco. Egli osservò che una stella di prima magnitudine produceva 100 volte più luce di una stella di sesta magnitudine e che, dunque, la scala introdotta da Ipparco non era affatto lineare. Oggi sappiamo che il motivo risiede nel fatto che l'occhio umano non percepisce linearmente l'aumento di luminosità di una sorgente (cioè, non sempre in corrispondenza di una variazione del numero di fotoni emessi, noi riusciamo a percepire la stessa variazione di intensità).
+
+Pogson stabilì che una differenza di 5 magnitudini tra due stelle corrispondesse esattamente al rapporto di 100:1 in brillanza e che, quindi, una magnitudine di differenza corrispondesse alla radice quinta di 100, cioè circa 2.5\,. Allora, la scala (adatta al sistema di Ipparco) da usare per esprimere la differenza in magnitudine tra due stelle è una scala logaritmica in base 10, che adotta come coefficiente 2.5 (corrispondente a quanto equivale una magnitudine in brillanza).
+
+In generale, le magnitudini $m_1$ e $m_2$ di due stelle e i loro rispettivi flussi sono legati dalla relazione
+
+\begin{equation}
+    m_1 - m_2=-2.5 \log_{10} \left( \frac{F_1}{F_2} \right)
+\end{equation}
+
+La magnitudine di Ipparco si può riportare al flusso (o alla brillanza) e viceversa (operando, quindi, una conversione) in relazione sempre ad una magnitudine di riferimento $m_0$ (a cui è associato un flusso $F_0$ di riferimento), secondo l'equazione:
+
+\begin{equation}
+   m = m_0 - 2.5\log_{10} \left( \frac{F}{F_0} \right)
+   \label{magn-ref}
+\end{equation}
+
+Secondo la \eqref{magn-ref}, più è piccola la magnitudine, più l'oggetto è luminoso rispetto all'altro.
+
+Nella scala di Ipparco, l'oggetto più luminoso visibile ad occhio nudo ha magnitudine zero ed è Vega. Poi, sempre tra quelli che vediamo ad occhio nudo, quello meno brillante ha magnitudine 6 \textit{rispetto a Vega}. Essendo una scala logaritmica, è possibile anche introdurre valori negativi: il Sole, ad esempio, ha magnitudine $-26$ rispetto a Vega. Cosa vuol dire? Operando l'equazione \eqref{magn-ref}:
+
+$$-26=0-2.5\log_{10} \left( \frac{F}{F_0} \right)$$
+
+e quindi $F = 10^{10}$; ciò significa che la differenza di flusso tra Vega (oggetto a magnitudine zero) ed il Sole è di $10^{10}$. Secondo questa scala, dunque, gli oggetti meno luminosi hanno magnitudine positiva e quello meno luminoso mai misurato possiede una magnitudine di +30, il che significa che per condurre misurazioni ci servono strumenti in grado di osservare range di brillantezza dell'ordine di $10^{22}$.
+
+Una magnitudine così definita dunque ci dice quanto è luminoso un oggetto rispetto ad un altro, ma non dice nulla sulla sua luminosità intrinseca, ed è detta per questo \textbf{magnitudine apparente}. Viene allora introdotta la \textbf{magnitudine assoluta}.
+
+Ricordando che il flusso rende conto della diminuzione della luminosità in funzione della distanza secondo la legge
+
+\begin{equation*}
+    F = \frac{L}{4\pi d^2}
+\end{equation*}
+
+potremmo idealmente ricollocare tutti gli oggetti da confrontare alla medesima distanza e chiederci quale sia veramente il più luminoso (in senso assoluto). Ad esempio, il Sole è più luminoso rispetto a Vega, ma solo perché è più vicino alla Terra; se li collocassimo entrambi alla stessa distanza, quale dei due sarebbe ora il più luminoso?
+
+La magnitudine assoluta viene allora definita come la magnitudine apparente di una sorgente posta ad una distanza di 10 Parsec (pc) dall'osservatore, dove $\rm 1 \, pc=3.086 \cdot 10^{16} \,m$. Quindi, la definizione della magnitudine assoluta di una stella corrisponde concettualmente al riportare tutte le stelle alla stessa distanza che, per convenzione, si decide essere pari a 10 Parsec. Ad esempio il Sole, se posto a tale distanza, diventa una stella di magnitudine 4.85.
+
+\vspace{0.2cm}Dagli esempi appena visti possiamo iniziare a cercare di determinare la distanza delle stelle. Consideriamo ancora il Sole, che ha una magnitudine apparente di -26 e una assoluta di 4.85. Supponiamo di scoprire una stella che sia identica al Sole; in quanto tale penseremmo che abbia la stessa magnitudine assoluta del Sole, ma di questo stiamo misurando una magnitudine apparente di 5.85. Questa differenza tra la magnitudine apparente e quella assoluta sarebbe uguale a
+
+$$5.85-4.85=2.5 \log_{10} \frac{d}{10}$$
+
+dove $d$ è la distanza dell'oggetto, divisa per 10 perché è la distanza a cui abbiamo collocato le stelle per definire la magnitudine assoluta. Tale differenza ci dà la distanza della stella, la quale prende il nome di \textbf{modulo della distanza}.

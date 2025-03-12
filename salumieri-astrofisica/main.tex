@@ -1,0 +1,66 @@
+\documentclass[leqno, openright, twoside, 11pt]{memoir}
+\usepackage{geometry}
+\author{P. Salumieri}
+\input{misc/settings}
+\usepackage[T1]{fontenc}                % per il font
+\usepackage[utf8]{inputenc}             % per l'input
+\usepackage[english, italian]{babel}    % lingua it
+
+\usepackage{layout}
+
+\usepackage[intlimits]{amsmath}     % =======================================
+\usepackage{amssymb}                % intlimits mette gli estremi di integrazione sopra e sotto il segno di integrale
+\usepackage{bbm}                    % cose utili per fare matematica e fisica
+\usepackage{physics}                % cose utili per fare matematica e fisica
+\usepackage[align]{tensor}          % =======================================
+
+\usepackage{graphicx}               % per le foto
+\usepackage{tikz}                   % per altre immagini
+\usepackage{enumitem}               % per personalizzare gli enumerate
+\usepackage{emptypage}              % non se se serve
+\usepackage{lettrine}               % per le lettere belle a inizio capitolo
+\usepackage{yfonts}                 % per le lettere belle a inizio capitolo
+\usepackage{hyperref}               % per fare le cose cliccabili in pdf
+    \hypersetup{
+        colorlinks=true,
+        linkcolor=black,
+        filecolor=black,      
+        urlcolor=cyan,
+        pdfpagemode=FullScreen,
+        citecolor=black,
+    }
+\usepackage{marginnote}
+\usepackage[font=footnotesize, hypcap=false]{caption}
+\usepackage{lipsum}
+
+\usepackage{xurl}
+\usepackage{csquotes}
+\usepackage[backend=biber, style=numeric-comp]{biblatex}
+    \addbibresource{misc/references.bib}
+
+\usepackage{../../../mypackages/mybookenv}
+
+% ---- REIMPOSTAZIONI ----
+\numberwithin{equation}{chapter}                            % Aggiunge il numero del capitolo all'equazione
+\setsecnumdepth{subsection}                                 % numera le subsection (1.1.1)
+
+\begin{document}
+    \makeatletter
+    \pagestyle{own}
+
+    \input{misc/titlepage}
+
+    \frontmatter
+        \input{chapters/preface}
+    \mainmatter
+        \input{chapters/intro}
+        \input{chapters/telescopi}
+        \input{chapters/fotometria}
+        \input{chapters/spettroscopia}
+        \input{chapters/stelle}
+        \input{chapters/sole}
+
+    \backmatter
+        \printbibliography
+
+\end{document}
