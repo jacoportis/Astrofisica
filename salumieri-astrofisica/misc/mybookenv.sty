@@ -1,0 +1,199 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{mybookenv}
+
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage{bbm}
+\RequirePackage{physics}
+\RequirePackage{tikz}
+\RequirePackage[skins, breakable]{tcolorbox}
+\RequirePackage{xcolor}
+
+%  ______   ______   __    __   __    __   ______   __   __   _____    ______    
+% /\  ___\ /\  __ \ /\ "-./  \ /\ "-./  \ /\  __ \ /\ "-.\ \ /\  __-. /\  ___\   
+% \ \ \____\ \ \/\ \\ \ \-./\ \\ \ \-./\ \\ \  __ \\ \ \-.  \\ \ \/\ \\ \___  \  
+%  \ \_____\\ \_____\\ \_\ \ \_\\ \_\ \ \_\\ \_\ \_\\ \_\\"\_\\ \____- \/\_____\ 
+%   \/_____/ \/_____/ \/_/  \/_/ \/_/  \/_/ \/_/\/_/ \/_/ \/_/ \/____/  \/_____/ 
+% ===============================================================================
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\id}{\mathbbm{1}}
+
+\newcommand{\al}{\alpha}
+\newcommand{\be}{\beta}
+\newcommand{\ga}{\gamma}
+
+\newcommand{\mcA}{\mathcal{A}}
+\newcommand{\mcB}{\mathcal{B}}
+\newcommand{\mcE}{\mathcal{E}}
+\newcommand{\mcF}{\mathcal{F}}
+\newcommand{\mcH}{\mathcal{H}}
+\newcommand{\mcK}{\mathcal{K}}
+\newcommand{\mcL}{\mathcal{L}}
+\newcommand{\mcS}{\mathcal{S}}
+\newcommand{\mcU}{\mathcal{U}}
+\newcommand{\mcV}{\mathcal{V}}
+\newcommand{\mcW}{\mathcal{W}}
+
+\newcommand{\myfunc}[3]{#1\colon\allowbreak#2\rightarrow#3}
+\newcommand{\myexp}[1]{e^{#1}}
+\newcommand{\lagrange}[3]{\dv{t}\pdv{#1}{#3}-\pdv{#1}{#2}}
+\newcommand{\ds}{\dd s}
+\newcommand{\mycomment}[1]{}
+\newcommand{\myetc}{\textit{et cetera}}
+\newcommand{\mycomma}{\,,}
+\newcommand{\myperiod}{\,.}
+
+%  ______   __   __   __   __ __   ______   ______   __   __   ______    
+% /\  ___\ /\ "-.\ \ /\ \ / //\ \ /\  == \ /\  __ \ /\ "-.\ \ /\  ___\   
+% \ \  __\ \ \ \-.  \\ \ \'/ \ \ \\ \  __< \ \ \/\ \\ \ \-.  \\ \___  \  
+%  \ \_____\\ \_\\"\_\\ \__|  \ \_\\ \_\ \_\\ \_____\\ \_\\"\_\\/\_____\ 
+%   \/_____/ \/_/ \/_/ \/_/    \/_/ \/_/ /_/ \/_____/ \/_/ \/_/ \/_____/ 
+% =======================================================================
+
+%=====================%
+%   tcolorbox SETUP   %
+%=====================%
+
+\newlength{\tcbtopbottomtitle}
+\newlength{\tcbrulewidth}
+\setlength{\tcbtopbottomtitle}{2pt}
+\setlength{\tcbrulewidth}{2pt}
+\newcommand{\tcbbacktitleopacity}{0.5}
+\newcommand{\tcbbackopacity}{0.2}
+\newcommand{\tcbborderlineopacity}{0.5}
+
+\tcbset{%
+    enhanced,
+    enhanced jigsaw,
+    breakable,
+    sharpish corners,
+    drop fuzzy shadow,
+    toptitle        = \tcbtopbottomtitle,
+    bottomtitle     = \tcbtopbottomtitle,
+    coltitle        = black,
+    opacitybacktitle= \tcbbacktitleopacity,
+    opacityback     = \tcbbackopacity,
+    boxrule         = 0pt,
+}
+
+%================%
+%   DEFINITION   %
+%================%
+
+\edef\definitioncolor{yellow!50!orange!40!white}
+
+\newcounter{definition}
+\renewcommand{\thedefinition}{\thechapter.\arabic{definition}}
+
+\newenvironment{definition}[1][]{%
+    \refstepcounter{definition}%
+    \begin{tcolorbox}[
+        title           = {{Definizione~\thedefinition}\ifx&#1&\else{\ \textnormal{(#1)}}\fi}., % if (argomento == vuoto) {scrivi "Teorema capitolo.teorema"} else {Teorema capitolo.teorema (nome).}
+        fonttitle       = \bfseries,
+        colbacktitle    = \definitioncolor,
+        colback         = \definitioncolor,
+        borderline west = {\tcbrulewidth}{0pt}{white},  
+        borderline west = {\tcbrulewidth}{0pt}{\definitioncolor,opacity=\tcbborderlineopacity},  
+    ]%
+    \itshape
+}{%
+    \end{tcolorbox}
+    \noindent
+}
+
+%================%
+%   CONVENTION   %
+%================%
+
+\edef\conventioncolor{black!20}
+
+\newcounter{convention}
+\renewcommand{\theconvention}{\thechapter.\arabic{convention}}
+
+\newenvironment{convention}[1][]{%
+    \refstepcounter{convention}
+    \begin{tcolorbox}[
+        title           = {{Convenzione~\theconvention}\ifx&#1&\else{\ \textnormal{(#1)}}\fi}.,
+        fonttitle       = \bfseries,
+        colbacktitle    = \conventioncolor,
+        colback         = \conventioncolor,
+        borderline west = {\tcbrulewidth}{0pt}{white},
+        borderline west = {\tcbrulewidth}{0pt}{\conventioncolor,opacity=\tcbborderlineopacity},
+    ]
+}{%
+    \end{tcolorbox}
+    \noindent
+}
+
+%=============%
+%   THEOREM   %
+%=============%
+
+\edef\theoremcolor{red!30}
+
+\newcounter{theorem}
+\renewcommand{\thetheorem}{\thechapter.\arabic{theorem}}
+
+\newenvironment{theorem}[1][]{%
+    \refstepcounter{theorem}
+    \begin{tcolorbox}[
+        title           = {{Teorema~\thetheorem}\ifx&#1&\else{\ \textnormal{(#1)}}\fi}.,
+        fonttitle       = \bfseries,
+        colbacktitle    = \theoremcolor,
+        colback         = \theoremcolor,
+        borderline west = {\tcbrulewidth}{0pt}{white},
+        borderline west = {\tcbrulewidth}{0pt}{\theoremcolor,opacity=\tcbborderlineopacity},
+    ]
+    \itshape
+}{%
+    \end{tcolorbox}
+    \noindent
+}
+
+%===========%
+%   PROOF   %
+%===========%
+
+\edef\proofcolor{white}
+
+\newenvironment{proof}{%
+    \begin{tcolorbox}[
+        title           = Dimostrazione.,
+        fonttitle       = \itshape,
+        colbacktitle    = \proofcolor!70!\theoremcolor,
+        colback         = \proofcolor!70!\theoremcolor,
+        borderline west = {\tcbrulewidth}{0pt}{white},
+        borderline west = {\tcbrulewidth}{0pt}{\theoremcolor,opacity=\tcbborderlineopacity},
+    ]
+}{%
+    \flushright{$\square$}
+    \end{tcolorbox}
+    \noindent
+}
+
+%=============%
+%   ESEMPIO   %
+%=============%
+
+\edef\examplecolor{black}
+
+\newcounter{example}
+\renewcommand{\theexample}{\thechapter.\arabic{example}}
+
+\newenvironment{example}[1][]{%
+    \refstepcounter{example}
+    \begin{tcolorbox}[
+        title           = {{Esempio~\theexample}\ifx&#1&\else{:\ \textnormal{#1}}\fi}.,
+        fonttitle       = \bfseries,
+        colbacktitle    = \examplecolor!10,
+        colback         = \examplecolor!0,
+        borderline west = {\tcbrulewidth}{0pt}{white},
+        borderline west = {\tcbrulewidth}{0pt}{\examplecolor,opacity=\tcbborderlineopacity},
+    ]
+}{\end{tcolorbox}}
