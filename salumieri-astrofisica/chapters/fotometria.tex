@@ -1,14 +1,35 @@
 \chapter{Fotometria}\label{ch:fotometria}
-    \yinitpar{C}\textsc{ome sappiamo}, la radiazione elettromagnetica è una delle principali fonti di informazioni sugli eventi astronomici e dallo studio della radiazione elettromagnetica che giunge sulla Terra dallo spazio è possibile a volte risalire ad alcune proprietà degli eventi che l'hanno generata.
-
-    Ad esempio la luce che viene riflessa può risultare polarizzata, quella che attraversa gas e polveri può partecipare a fenomeni di scattering e cambiare la propria lunghezza d'onda e anche le particelle cariche possono produrre ulteriore radiazione tramite effetto Cherenkov o radiazione di sincrotrone.
-
-    Studiando la radiazione che incide sui nostri strumenti possiamo quindi ricostruire il processo fisico che l'ha generato e dedurre le condizioni al contorno che hanno permesso a quel processo di verificarsi.
-
-    Naturalmente questa tecnica ha delle difficoltà legate al fatto che diversi fenomeni possono generare radiazione elettromagnetica simile, per cui la fotometria non è un metodo sufficiente a risalire alle caratteristiche della sorgente e deve essere affiancata da metodi più potenti.
-    \section{Acquisizione dei dati}
-        Per studiare un oggetto nel cielo, la prassi è quella di puntare gli strumenti nella sua direzione e ad un certo istante di tempo misurare l'intensità specifica\footnote{Densità di energia al variare di tutto, vedi Sez Telescopi.xx?}. Per un attimo, immaginiamo di trascurare tutti i fenomeni che alterano la radiazione nel percorso dalla sorgente al rivelatore e concentriamoci sul solo processo di misura.
-
-        Per cominciare, il modo in cui l'osservatore usa lo strumento---che sia consapevole o no delle conseguenze delle proprie scelte---può falsare la misura o causare la perdita di informazioni: se misuro la luminosità di una stella tutti i giorni alla stessa ora e leggo sempre lo stesso valore, potrei essere indotto a pensare che la stella abbia luminosità costante, ma che succede nelle 24 ore di tempo in cui non effettuo misure? La luminosità potrebbe cambiare periodicamente e io potrei aver avuto la ``(s)fortuna'' di aver effettuato le misure in momenti in cui la luminosità assume lo stesso valore, senza pensare che a un orario diverso la luminosità possa essere diversa.
-
-        Assumendo che l'osservatore prenda le misure in modo impeccabile, dovrà comunque scontrarsi con i limiti tecnici dell'apparecchio che ha davanti. Il potere risolutivo dell'apparato utilizzato potrebbe non essere sufficiente a risolvere due stelle vicine; inoltre non è detto che esso sia sensibile a tutte le lunghezze d'onda, così come potrebbe non distinguere lunghezze d'onda diverse. Dovrebbe inoltre essere in grado di misurare la polarizzazione della luce incidente e l'esatto numero di fotoni che riceve
+\epigraph{La fotometria}{ciao}
+\noindent\yinitpar{\color{purple}L}\textsc{a fotometria} è lo studio della radiazione elettromagnetica come detto prima bla bla bla. \lipsum[1]
+\section{Intensità, flusso, magnitudini}.
+    Introduciamo le grandezze più importanti della fotometria. Come sappiamo, la radiazione elettromagnetica trasporta un'energia; supponiamo di avere quindi della radiazione che attraversa una superficie $\dd A$ il cui vettore normale forma un angolo $\vartheta$ con la direzione di propagazione. Essa, lasciando la superficie ``alle sue spalle'', si manterrà all'interno di un angolo solido $\dd\Omega$ che stacca dalla normale alla superficie lo stesso angolo $\dd\vartheta$. In generale le radiazione può contenere qualisai lunghezza d'onda: consideriamo inizialmente la radiazione nelle frequenze comprese nell'intervallo  $\bqty{\nu,\nu + \dd\nu}$. L'energia infinitesima che la radiazione trasporta nella regione $\dd\Omega$ sarà quindi $\dd E_\nu \propto \dd t \dd\nu \cos\vartheta\dd A$. Chiamiamo \emph{intensità specifica} la costante di proporzionalità, $I_\nu$, e scriviamo:
+    \begin{equation}
+        \label{intensità-specifica-freq}
+        \dd[4] E_\nu = I_{\nu} \dd{\nu} \dd{t} \cos{\vartheta} \dd{A} \dd{\Omega}
+        \myperiod
+    \end{equation}
+    In modo del tutto analogo possiamo fare lo stesso ragionamento decomponendo lo spettro in lunghezza d'onda anziché in frequenza e avremo:
+    \begin{equation}
+        \label{intensità-specifica-freq}
+        \dd[4] E_\lambda = I_\lambda \,\dd\lambda\,\dd t\cos\vartheta\,\dd A \,\dd\Omega
+        \myperiod
+    \end{equation}
+    Integrando su tutte le frequenze otteniamo l'\emph{intensità totale} denotata dalla lettera $I$ e data da
+    \begin{equation}
+        \label{intensità-totale}
+        \dd[3] E = \int_{0}^{+\infty}I_\nu \,\dd\nu\,\dd t\cos\vartheta\,\dd A \,\dd\Omega = I \,\dd t\cos\vartheta\,\dd A \,\dd\Omega
+        \myperiod
+    \end{equation}
+    Invertendo queste relazioni si trova subito:
+    \begin{align}
+        I_\nu &= \frac{1}{\cos\vartheta}\frac{\dd[4] E_\nu}{\dd{\nu} \dd{t} \dd{A} \dd{\Omega}} \mycomma \\
+        I_\lambda &= \frac{1}{\cos\vartheta}\frac{\dd[4] E_\lambda}{\dd{\lambda} \dd{t} \dd{A} \dd{\Omega}}
+        \mycomma \\
+        I &= \frac{1}{\cos\vartheta}\frac{\dd[3] E}{\dd t \dd{A} \dd{\Omega}}
+        \myperiod
+    \end{align}
+    Un'altra grandezza utile nell'Astrofisica è il \emph{flusso di energia}, detto atrimenti \emph{flusso} o \emph{luminosità} che coincide con la potenza. Risulta utile inoltre introdurre la \emph{densità di flusso}---che, purtroppo, viene spesso detto \emph{flusso}  creando non poca confusione---ovvero la grandezza che integrata su tutta una superficie chiusa restituisce il flusso. In questo modo si ha:
+    \begin{align}
+        L &= \dv{E}{t} = \\mycomma \\
+        F &= 
+    \end{align}
