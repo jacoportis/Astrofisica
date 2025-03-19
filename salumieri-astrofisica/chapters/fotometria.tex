@@ -10,16 +10,16 @@
     \end{equation}
     In modo del tutto analogo possiamo fare lo stesso ragionamento decomponendo lo spettro in lunghezza d'onda anziché in frequenza e avremo:
     \begin{equation}
-        \label{intensità-specifica-freq}
+        \label{intensità-specifica-lambda}
         \dd[4] E_\lambda = I_\lambda \,\dd\lambda\,\dd t\cos\vartheta\,\dd A \,\dd\Omega
         \myperiod
     \end{equation}
     Integrando su tutte le frequenze otteniamo l'\emph{intensità totale} denotata dalla lettera $I$ e data da
-    \begin{equation}
+    \begin{equation*}
         \label{intensità-totale}
-        \dd[3] E = \int_{0}^{+\infty}I_\nu \,\dd\nu\,\dd t\cos\vartheta\,\dd A \,\dd\Omega = I \,\dd t\cos\vartheta\,\dd A \,\dd\Omega
+        \dd[3] E = \int_{0}^{\infty}I_\nu \,\dd\nu\,\dd t\cos\vartheta\,\dd A \,\dd\Omega = I \,\dd t\cos\vartheta\,\dd A \,\dd\Omega
         \myperiod
-    \end{equation}
+    \end{equation*}
     Invertendo queste relazioni si trova subito:
     \begin{align}
         I_\nu &= \frac{1}{\cos\vartheta}\frac{\dd[4] E_\nu}{\dd{\nu} \dd{t} \dd{A} \dd{\Omega}} \mycomma \\
@@ -28,8 +28,29 @@
         I &= \frac{1}{\cos\vartheta}\frac{\dd[3] E}{\dd t \dd{A} \dd{\Omega}}
         \myperiod
     \end{align}
-    Un'altra grandezza utile nell'Astrofisica è il \emph{flusso di energia}, detto atrimenti \emph{flusso} o \emph{luminosità} che coincide con la potenza. Risulta utile inoltre introdurre la \emph{densità di flusso}---che, purtroppo, viene spesso detto \emph{flusso}  creando non poca confusione---ovvero la grandezza che integrata su tutta una superficie chiusa restituisce il flusso. In questo modo si ha:
+    Un'altra grandezza utile nell'Astrofisica è il \emph{flusso di energia}, detto atrimenti \emph{flusso} o \emph{luminosità} che coincide con la potenza. Risulta utile inoltre introdurre la \emph{densità di flusso}---che, purtroppo, viene spesso detta \emph{flusso} creando non poca confusione---ovvero la grandezza che integrata su una superficie restituisce il flusso. In questo modo si ha:
     \begin{align}
-        L &= \dv{E}{t} = \\mycomma \\
-        F &= 
+        L &= \dv{E}{t} = \oint\nolimits_{S} F\dd{S} \mycomma \\
+        L &= 4\pi r^2 F \quad \implies \quad F = \frac{L}{4\pi r^2}
+        \mycomma
     \end{align}
+    dove l'ultima uguaglianza è ottenuta integrando su una superficie sferica $S$ di raggio $r$ e supponendo $F$ ivi costante.
+
+    Possiamo dedurre che, se la luminosità è una proprietà intrinseca del corpo che emette radiazione---si pensi alla conservazione della potenza nel vuoto, la densità di flusso allora è una grandezza che decresce con $r^2$. Volendo fare un'analogia con l'elettrostatica, $L$ gioca il ruolo della carica\footnote{A rigore, la carica divisa per $\epsilon_{0}$.} netta di una distribuzione contenuta all'interno di una superficie chiusa ed $F$ quello del campo elettrico da essa generata.
+
+    Se un corpo è esteso e non approssimabile come puntiforme, la luminosità e la densità di flusso saranno funzione delle coordinate di ciascun punto del corpo esteso che le genera. Si definisce \emph{brillanza superficiale} la somma (l'integrale) di tutti i contributi di densità di flusso al variare delle sorgenti elementari.
+    \subsection{Magnitudine apparente}
+        Un primo tentativo di classificazione delle stelle fu fatto da un astronomo di nome Ipparco nel 129 a.C. Egli divise le stelle in sei classi a seconda di quanto apparissero ``brillanti'' a occhio nudo e chiamò queste classi \emph{magnitudini}. Secondo la sua classificazione le stelle più brillanti andavano collocate nella \emph{prima magnitudine}, seguite da quelle di \emph{seconda magnitudine} \myetc, fino a quelle appena visibili che appartenevano alla \emph{sesta magnitudine}.
+
+        Nel 1956, l'astronomo britannico Norman Pogson formalizzò ed estese questa classificazione matematicamente. Pogson si rese conto che il legame tra la densità di flusso di una stella e la sua appartenenza a una cerca classe di magnitudine di Ipparco era tutt'altro che lineare. Supponendo infatti di avere tre stelle i cui \emph{flussi}\footnote{Qui si fa riferimento alla \emph{densità di flusso}. Per brevità anche in questo testo da adesso si userà l'espressione abbreviata. Per non fare confusione, l'usuale \emph{flusso} verrà chiamato sempre \emph{luminosità}.} siano in rapporto $1:10:100$, la differenza di magnitudine tra la prima e la seconda e tra la seconda e la stessa appare la stessa: se la prima stella è di prima magnitudine e la seconda è di terza magnitudine, la terza apparirà di quinta magnitudine. Pogson in particolare notò che a due stelle i cui i flussi sono in un rapporto di $1:100$ corrisponde una differenza di magnitudine pari a $5$; questo vuol dire che a due classi consecutive di magnitudine deve corrispondere un incremento---o decremento---del flusso un fattore $\sqrt[5]{100} \approx \num{2,512}$. Pogson stabilì quindi che la differenza di magnitudine tra due stelle dovesse essere data dalla relazione
+        \begin{equation}
+            \label{eq:magnitudine-diff}
+            m_{2} - m_{1} = -2.5 \Log{\pqty{\frac{F_{2}}{F_{1}}}}
+            \mycomma
+        \end{equation}
+        dove il $-2.5$ al posto del $\num{-2,512}$ è intenzionale e $\Log \equiv \log_
+        {10}$. Naturalmente la \eqref{eq:magnitudine-diff} non permette di definire univocamente la magnitudine apparente di una stella ma solo di valutare la differenza di magnitudine tra due di esse.\footnote{Un po' come il potenziale di una forza che è definito a meno di una costante ma la d.d.p. è univocamente determinata.} Si usa quindi scegliere una certa stella che abbia un certo flusso $F_{0}$ noto a cui viene imposto $m_{0} = 0$; per convenzione questa scelta ricade sulla stella Vega. In questo modo la \eqref{eq:magnitudine-diff} diventa
+        \begin{equation*}
+            m_{2} = -2.5 \Log{\pqty{\frac{F}{F_{0}}}}
+            \myperiod
+        \end{equation*}
