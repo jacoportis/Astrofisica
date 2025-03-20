@@ -42,11 +42,16 @@
 
 \usepackage{misc/mybookenv}
 
-
-
 % ---- REIMPOSTAZIONI ----
 \numberwithin{equation}{chapter}                            % Aggiunge il numero del capitolo all'equazione
 \setsecnumdepth{subsection}                                 % numera le subsection (1.1.1)
+
+% ---- COMANDI DI QUESTO LIBRO ----
+\DeclareSIUnit\angstrom{\text{\AA}}
+\DeclareSIUnit\parsec{\text{pc}}
+
+\newcommand{\ccd}{CCD}
+\newcommand{\ubvri}{\textsc{ubvri}}
 
 \begin{document}
     \makeatletter

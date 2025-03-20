@@ -1,7 +1,7 @@
 \chapter{Fotometria}\label{ch:fotometria}
 \epigraph{La fotometria}{ciao}
 \noindent\yinitpar{\color{purple}L}\textsc{a fotometria} è lo studio della radiazione elettromagnetica come detto prima bla bla bla. \lipsum[1]
-\section{Intensità, flusso, magnitudini}.
+\section{Intensità, flusso, magnitudini}
     Introduciamo le grandezze più importanti della fotometria. Come sappiamo, la radiazione elettromagnetica trasporta un'energia; supponiamo di avere quindi della radiazione che attraversa una superficie $\dd A$ il cui vettore normale forma un angolo $\vartheta$ con la direzione di propagazione. Essa, lasciando la superficie ``alle sue spalle'', si manterrà all'interno di un angolo solido $\dd\Omega$ che stacca dalla normale alla superficie lo stesso angolo $\dd\vartheta$. In generale le radiazione può contenere qualisai lunghezza d'onda: consideriamo inizialmente la radiazione nelle frequenze comprese nell'intervallo  $\bqty{\nu,\nu + \dd\nu}$. L'energia infinitesima che la radiazione trasporta nella regione $\dd\Omega$ sarà quindi $\dd E_\nu \propto \dd t \dd\nu \cos\vartheta\dd A$. Chiamiamo \emph{intensità specifica} la costante di proporzionalità, $I_\nu$, e scriviamo:
     \begin{equation}
         \label{intensità-specifica-freq}
@@ -26,11 +26,15 @@
         I_\lambda &= \frac{1}{\cos\vartheta}\frac{\dd[4] E_\lambda}{\dd{\lambda} \dd{t} \dd{A} \dd{\Omega}}
         \mycomma \\
         I &= \frac{1}{\cos\vartheta}\frac{\dd[3] E}{\dd t \dd{A} \dd{\Omega}}
+        = \int_{0}^{\infty}I_\nu \,\dd\nu
+        = \int_{0}^{\infty}I_\lambda \,\dd\lambda
         \myperiod
     \end{align}
     Un'altra grandezza utile nell'Astrofisica è il \emph{flusso di energia}, detto atrimenti \emph{flusso} o \emph{luminosità} che coincide con la potenza. Risulta utile inoltre introdurre la \emph{densità di flusso}---che, purtroppo, viene spesso detta \emph{flusso} creando non poca confusione---ovvero la grandezza che integrata su una superficie restituisce il flusso. In questo modo si ha:
     \begin{align}
+        \label{eq:lumin-1}
         L &= \dv{E}{t} = \oint\nolimits_{S} F\dd{S} \mycomma \\
+        \label{eq:lumin-2}
         L &= 4\pi r^2 F \quad \implies \quad F = \frac{L}{4\pi r^2}
         \mycomma
     \end{align}
@@ -42,15 +46,47 @@
     \subsection{Magnitudine apparente}
         Un primo tentativo di classificazione delle stelle fu fatto da un astronomo di nome Ipparco nel 129 a.C. Egli divise le stelle in sei classi a seconda di quanto apparissero ``brillanti'' a occhio nudo e chiamò queste classi \emph{magnitudini}. Secondo la sua classificazione le stelle più brillanti andavano collocate nella \emph{prima magnitudine}, seguite da quelle di \emph{seconda magnitudine} \myetc, fino a quelle appena visibili che appartenevano alla \emph{sesta magnitudine}.
 
-        Nel 1956, l'astronomo britannico Norman Pogson formalizzò ed estese questa classificazione matematicamente. Pogson si rese conto che il legame tra la densità di flusso di una stella e la sua appartenenza a una cerca classe di magnitudine di Ipparco era tutt'altro che lineare. Supponendo infatti di avere tre stelle i cui \emph{flussi}\footnote{Qui si fa riferimento alla \emph{densità di flusso}. Per brevità anche in questo testo da adesso si userà l'espressione abbreviata. Per non fare confusione, l'usuale \emph{flusso} verrà chiamato sempre \emph{luminosità}.} siano in rapporto $1:10:100$, la differenza di magnitudine tra la prima e la seconda e tra la seconda e la stessa appare la stessa: se la prima stella è di prima magnitudine e la seconda è di terza magnitudine, la terza apparirà di quinta magnitudine. Pogson in particolare notò che a due stelle i cui i flussi sono in un rapporto di $1:100$ corrisponde una differenza di magnitudine pari a $5$; questo vuol dire che a due classi consecutive di magnitudine deve corrispondere un incremento---o decremento---del flusso un fattore $\sqrt[5]{100} \approx \num{2,512}$. Pogson stabilì quindi che la differenza di magnitudine tra due stelle dovesse essere data dalla relazione
+        Nel 1956, l'astronomo britannico Norman Pogson formalizzò ed estese questa classificazione matematicamente. Pogson si rese conto che il legame tra la densità di flusso di una stella e la sua appartenenza a una cerca classe di magnitudine di Ipparco era tutt'altro che lineare. Supponendo infatti di avere tre stelle i cui \emph{flussi}\footnote{Qui si fa riferimento alla \emph{densità di flusso}. Per brevità anche in questo testo in alcuni punti si userà l'espressione abbreviata. Per non fare confusione, l'usuale \emph{flusso} verrà chiamato sempre \emph{luminosità}.} siano in rapporto $1:10:100$, la differenza di magnitudine tra la prima e la seconda e tra la seconda e la stessa appare la stessa: se la prima stella è di prima magnitudine e la seconda è di terza magnitudine, la terza apparirà di quinta magnitudine. Pogson in particolare notò che a due stelle i cui i flussi sono in un rapporto di $1:100$ corrisponde una differenza di magnitudine pari a $5$; questo vuol dire che a due classi consecutive di magnitudine deve corrispondere un incremento---o decremento---del flusso un fattore $\sqrt[5]{100} \approx \num{2,512}$. Pogson stabilì quindi che la differenza di magnitudine tra due stelle dovesse essere data dalla relazione
         \begin{equation}
             \label{eq:magnitudine-diff}
             m_{2} - m_{1} = -2.5 \Log{\pqty{\frac{F_{2}}{F_{1}}}}
             \mycomma
         \end{equation}
-        dove il $-2.5$ al posto del $\num{-2,512}$ è intenzionale e $\Log \equiv \log_
-        {10}$. Naturalmente la \eqref{eq:magnitudine-diff} non permette di definire univocamente la magnitudine apparente di una stella ma solo di valutare la differenza di magnitudine tra due di esse.\footnote{Un po' come il potenziale di una forza che è definito a meno di una costante ma la d.d.p. è univocamente determinata.} Si usa quindi scegliere una certa stella che abbia un certo flusso $F_{0}$ noto a cui viene imposto $m_{0} = 0$; per convenzione questa scelta ricade sulla stella Vega. In questo modo la \eqref{eq:magnitudine-diff} diventa
+        dove il \num{-2.5} al posto del \num{-2,512} è intenzionale e $\Log \equiv \log_
+        {10}$. Naturalmente la \eqref{eq:magnitudine-diff} non permette di definire univocamente la magnitudine apparente di una stella ma solo di valutare la differenza di magnitudine tra due di esse.\footnote{Un po' come il potenziale di una forza che è definito a meno di una costante ma la d.d.p. è univocamente determinata.} Si usa quindi scegliere una certa stella che abbia un certo flusso $F_{0}$ noto a cui viene imposta una magnitudine $m_{0} = 0$; per convenzione questa scelta ricade sulla stella Vega. In questo modo la \eqref{eq:magnitudine-diff} diventa
+        \begin{equation}
+            \label{magnitudine-app}
+            m = -2.5 \Log{\pqty{\frac{F}{F_{0}}}}
+            \myperiod
+        \end{equation}
+        La magnitudine apparente del Sole, avendo posto Vega a $0$, risulta negativa e pari a \num{-26}. Questo significa che il flusso del sole è circa \num{e10} volte quello di Vega. L'oggetto meno luminoso mai misurato possiede invece una magnitudine apparente di \num{30}. Per rendere un'idea di quanta luce provenga effettivamente da Vega, basti pensare che in \num{1}\unit{s} \num{1}\unit{cm^2} di superficie è attraversato da circa \num{900} fotoni in un range di lunghezze d'onda di \num{1}\unit{\angstrom}. Da una lampada invece ne provengono circa \num{e20}.
+
+        È evidente che a magnitudini più basse---o addirittura a valori negativi---corrispondono oggetti più apparentemente luminosi.
+    \subsection{Magnitudine assoluta}
+        Il fatto che il Sole abbia una magnitudine così ``bassa'' rispetto a tutte le altre stelle non deve indurci a credere che il sole sia effettivamente \num{e10} o più volte più luminoso di esse. Il Sole risulta così fuori scala per via della sua distanza.
+
+        Se teniamo conto del fatto che la magnitudine apparente è definita attraverso il rapporto delle \emph{densità di flusso}, è facile convincersi del fatto che essa non dia alcuna informazione sulla luminosità intrinseca dei corpi celesti considerati. Infatti il flusso decresce col quadrato della distanza e, se immaginiamo di avere stelle identiche a distanze diverse, queste appariranno con magnitudini diverse nonostante la luminosità sia la stessa. Al fine di introdurre un modo più sistematico di valutare la luminosità delle stelle, immaginiamo di prendere tutte le stelle dell'Universo e metterle alla stessa distanza dal nostro punto di osservazione. A questo punto la differenza di magnitudine tra due stelle sarà coerente con la differenza delle loro luminosità---e anche del loro flusso, vista la \eqref{eq:lumin-2}: una stella più luminosa avrà un flusso maggiore e una magnitudine ``più negativa'' e, viceversa, a stelle meno luminose corrisponderanno magnitudini più alte.
+        
+        Se decidiamo di scegliere questa distanza pari a \num{10}\unit{\parsec}, otteniamo quella che viene detta \emph{magnitudine assoulta}. La magnitudine assoluta si indica con la lettera $M$ e lega la magnitudine apparente di una stella alla sua distanza da noi. Infatti se indichiamo con $F_r$ il flusso di una stella a distanza $r$ e con $F_{10}$ il suo flusso a distanza \num{10}\unit{pc}, si ha dalla \eqref{eq:lumin-2}
         \begin{equation*}
-            m_{2} = -2.5 \Log{\pqty{\frac{F}{F_{0}}}}
+            \frac{F_r}{F_{10}} = \frac{4 \pi \pqty{\num{10}\unit{\parsec}}^2}{4 \pi r^2} = \pqty{\frac{\num{10}\unit{\parsec}}{r}}^2
+        \end{equation*}
+        che, inserito nella \eqref{eq:magnitudine-diff} dà
+        \begin{equation*}
+            m - M = -2.5 \Log{\pqty{\frac{\num{10}\unit{\parsec}}{r}}}^2
             \myperiod
         \end{equation*}
+        Portando un $-2$ fuori dal logaritmo si ottiene quello che viene detto \emph{modulo della distanza}:
+        \begin{equation}
+            \label{eq:modulo-distanza}
+            m - M = 5 \Log{\pqty{\frac{r}{\num{10}\unit{\parsec}}}}
+        \end{equation}
+    \subsection{Magnitudine fotografica e bolometrica}
+        Fin'ora nel parlare di magnitudini abbiamo completamente trascurato un'informazione importante. Il flusso di una stella dovrebbe essere calcolato tenendo conto di tutti i fotoni ricevuti a tutte le lunghezze d'onda, cosa che di certo l'occhio umano non può fare.
+        
+        Potremmo provare a migliorare la nostra classificazione con l'aiuto di un sensore \ccd, che ha un'efficienza quantica superiore a quella dell'occhio umano e permette di fare anche esposizioni più lunghe migliorando il rapporto segnale--rumore. Il primo a fare un tentativo simile fu l'astronomo G. P. Bond nel XIX Secolo che ebbe l'intuizione di porre una lastra fotografica sul piano focale di un telescopio. Fotografando diversi oggetti notò che quelli più luminosi lasciavano sulla lastra delle ``macchie'' più grandi e questo permetteva di asssegnare loro una magnitudine in modo più sistematico. Una magnitudine definita in questo modo può risultare sufficientemente utile da avere un nome suo, quello di \emph{magnitudine fotografica}.
+
+        Se provassimo a fare la stessa cosa, con una \ccd---ma anche con una lastra fotografica---dopo poche misurazioni inizieremmo a notare delle discrepanze tra le magnitudini fotografiche e quelle \emph{visuali}:\footnote{Dall'osservazione a occhio nudo.} due stelle con magnitudine visuale uguale potrebbero avere magnitudine fotografica differente e viceversa, oppure nella foto potrebbero comparire stelle invisibili a occhio nudo. Questo è dovuto al fatto che l'efficienza quantica dei sensori \ccd\ non solo è in generale più elevata, ma lo è in un intervallo più esteso di quello dell'occhio umano, con un picco leggermente spostato verso il blu rispetto a quello dell'occhio che ricade nel verde.
+
+        Si definisce invece \emph{magnitudine bolometrica} la magnitudine teorica ottenuta integrando segnale su tutte le lunghezze d'onda alla massima efficienza. Si tratta di una idealizzazione impossibile da ottenere con le misure a causa dei limiti pratici dovuti al mezzo interstellare, l'atmosfera, l'inefficienza degli strumenti \myetc.
+\section{Il sistema \ubvri}
