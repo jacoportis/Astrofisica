@@ -89,7 +89,7 @@
         Se provassimo a fare la stessa cosa, con una \ccd---ma anche con una lastra fotografica---dopo poche misurazioni inizieremmo a notare delle discrepanze tra le magnitudini fotografiche e quelle \emph{visuali}:\footnote{Dall'osservazione a occhio nudo.} due stelle con magnitudine visuale uguale potrebbero avere magnitudine fotografica differente e viceversa, oppure nella foto potrebbero comparire stelle invisibili a occhio nudo. Questo è dovuto al fatto che l'efficienza quantica dei sensori \ccd\ non solo è in generale più elevata, ma lo è in un intervallo più esteso di quello dell'occhio umano, con un picco leggermente spostato verso il blu rispetto a quello dell'occhio che ricade nel verde.
 
         Si definisce invece \emph{magnitudine bolometrica} la magnitudine teorica ottenuta integrando segnale su tutte le lunghezze d'onda alla massima efficienza. Si tratta di una idealizzazione impossibile da ottenere con le misure a causa dei limiti pratici dovuti al mezzo interstellare, l'atmosfera, l'inefficienza degli strumenti \myetc.
-\section{Il sistema \ubvri}
+\section{Sistema \ubvri\ e indice di colore}
     Un primo modo di risalire alla forma dello spettro di una stella è quello di misurare il flusso di fotoni in alcuni range di lunghezze d'onda---in un modo simile a come costruiremmo un istogramma---per poi ``unire i punti'' e capire in prima approssimazione l'andamento dell flusso con la lunghezza d'onda.
     \subsection{Bande spettrali}
         Si potrebbe pensare che una suddivisione più fine\footnote{Più intervalli, più stretti.} degli intervalli sia utile a migliorare la precisione delle misure, ma purtroppo non è esattamente vero. Ricordiamo che in un intervallo di \SI{1}{\angstrom} una stella di magnitudine $m = \num{0}$ ha un flusso di circa $\num{900}$ fotoni al secondo per centimetro quadrato. Il valore corrispondente per una stella di magnitudine $m = \num{5}$ è di \num{9} fotoni! Se ricordiamo che la ricezione dei fotoni è una misura di conteggio, governata quindi dalla statistica di Poisson, a questi \num{9} fotoni corrisponde un'incertezza del $\SI{33}{\percent}$, che rende la misura statisticamente poco significativa.
@@ -98,17 +98,21 @@
     \subsection{Filtri}
         La standardizzazione di questa tecnica è stata introdotta definendo il sistema \emph{sistema \ubvri} per la suddivisione delle varie bande.
         
-        Il modo più intuitivo di selezionare questi intervalli è quello di utilizzare dei materiali come il vetro colorato: quando guardiamo attraverso un vetro rosso, quello che succede è che il vetro blocca le lunghezze d'onda fuori da un certo range e lascia passare quelle in prossimità del rosso. Un oggetto con questo comportamento viene detto \emph{filtro} e nell'utilizzarlo bisogna tenere conto di due fattori:
-        \begin{enumerate}[label = \arabic{enumi}.]
-            \item Trasmissività del filtro: la percentuale di fotoni che il filtro trasmette ad ogni lunghezza d'onda;
-            \item Efficienza Quantica: la percentuale di fotoni incidenti che il sensore rivela. 
-        \end{enumerate}
-        Ad esempio se una sorgente emette \num{100} fotoni a una data lunghezza d'onda e questi attraversano un filtro che ha una trasmissività del \SI{90}{\percent} per poi incidere su un sensore con una efficienza quantica del \SI{50}{\percent}, il sensore rivelerà \num{45} fotoni, meno della metà.
+        Il modo più intuitivo di selezionare questi intervalli è quello di utilizzare dei materiali come il vetro colorato: quando guardiamo attraverso un vetro rosso, quello che succede è che il vetro blocca le lunghezze d'onda fuori da un certo range e lascia passare quelle in prossimità del rosso. Un oggetto con questo comportamento viene detto \emph{filtro} e ad esso viene assegnata un'importante caratteristica che prende il nome di \emph{trasmissività}, definita come la percentuale di fotoni incidenti che vengono trasmessi. In generale è funzione della lunghezza d'onda (o della frequenza).
+
+        È importante tenere conto della trasmissività quando si eseguono delle osservazioni. Ad esempio se una sorgente emette \num{100} fotoni a una data lunghezza d'onda e questi attraversano un filtro con una trasmissività del \SI{60}{\percent} per poi incidere su un sensore con una efficienza quantica del \SI{50}{\percent}, il sensore rivelerà \num{30} fotoni, meno della metà.
 
         Il criterio di suddivisione delle bande spettrrali fu affinato nel 1935 da H. L. Johnson che introdusse i primi tre filtri standard indicati dalle lettere U, B e V. Queste stanno per:
         \begin{enumerate}
-            \item[\textbf{U}:] Ultravioletto. Il valor medio delle lunghezze d'onda che questo filtro lascia passare è pari a \SI{3650}{\angstrom} (UV).
-            \item[\textbf{B}:] Blu. Il corrispettivo valor medio è di \SI{4440}{\angstrom} (violetto--blu).
-            \item[\textbf{V}:] Visibile. La sua banda spettrale si colloca verso il centro dello spettro visibile con un valor medio di \SI{5500}{\angstrom} (Verde).
+            \item[\textbf{U:}] Ultravioletto. Il valor medio delle lunghezze d'onda che questo filtro lascia passare è pari a \SI{3650}{\angstrom} (UV).
+            \item[\textbf{B:}] Blu. Il corrispettivo valor medio è di \SI{4440}{\angstrom} (violetto--blu).
+            \item[\textbf{V:}] Visibile. La sua banda spettrale si colloca verso il centro dello spettro visibile con un valor medio di \SI{5500}{\angstrom} (verde).
         \end{enumerate}
-        Questi primi tre filtri sono molto spostati verso il blu perché le lastre fotografiche dell'epoca erano più sensibili a quegli intervalli di lunghezze d'onda.
+        Questi primi tre filtri sono molto spostati verso il blu perché le lastre fotografiche dell'epoca erano più sensibili a quegli intervalli di lunghezze d'onda. Negli anni successivi si sono introdotti filtri nella direzione dell'infrarosso:
+        \begin{enumerate}
+            \item[\textbf{R:}] Rosso, con una lunghezza d'onda media di \SI{6400}{\angstrom} (arancione--rosso).
+            \item[\textbf{I:}] Infrarosso, con una lunghezza d'onda media di \SI{7900}{\angstrom} (vicino infrarosso).
+        \end{enumerate}
+        È evidente che il nome del sistema, \emph{\ubvri}, discende proprio da questi cinque filtri.
+    \subsection{Indice di colore}
+\section{Diagramma di Hertzsprung--Russel}
