@@ -1,0 +1,10 @@
+\begin{tikzpicture}
+    \foreach \y in {-1, -0.5 , 0, 0.5, 1,}
+        \draw[shift={(0,\y)}] (0,0) -- (5,0);
+    \draw[thick,teal] (2.5,-0.5) -- (2.5,1.5);
+    \node at (2.2,0.7) {$\dd{x}$};
+    \draw[thick,teal] (2.5,-0.5) -- (3.5,1.232);
+    \node at (3.2,0.3) {$\dd{s}$};
+    \draw[thick] (2.5,0.3) arc (90:60:0.8cm);
+    \node at (2.75,0.4) {\scriptsize $\vartheta$};
+\end{tikzpicture}

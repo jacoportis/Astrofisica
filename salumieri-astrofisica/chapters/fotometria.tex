@@ -1,5 +1,5 @@
 \chapter{Fotometria}\label{ch:fotometria}
-\epigraph{La fotometria}{ciao}
+\epigraph{\itshape La fotometria è come voler indovinare due numeri conoscendone la somma.}{F. Pinguino}
 \noindent\yinitpar{\color{purple}L}\textsc{a fotometria} è lo studio della radiazione elettromagnetica come detto prima bla bla bla. \lipsum[1]
 \section{Intensità, flusso, magnitudini}
     Introduciamo le grandezze più importanti della fotometria. Come sappiamo, la radiazione elettromagnetica trasporta un'energia; supponiamo di avere quindi della radiazione che attraversa una superficie $\dd A$ il cui vettore normale forma un angolo $\vartheta$ con la direzione di propagazione. Essa, lasciando la superficie ``alle sue spalle'', si manterrà all'interno di un angolo solido $\dd\Omega$ che stacca dalla normale alla superficie lo stesso angolo $\dd\vartheta$. In generale le radiazione può contenere qualisai lunghezza d'onda: consideriamo inizialmente la radiazione nelle frequenze comprese nell'intervallo  $\bqty{\nu,\nu + \dd\nu}$. L'energia infinitesima che la radiazione trasporta nella regione $\dd\Omega$ sarà quindi $\dd E_\nu \propto \dd t \dd\nu \cos\vartheta\dd A$. Chiamiamo \emph{intensità specifica} la costante di proporzionalità, $I_\nu$, e scriviamo:
@@ -114,7 +114,28 @@
             \item[\textbf{I:}] Infrarosso, con una lunghezza d'onda media di \SI{7900}{\angstrom} (vicino infrarosso).
         \end{enumerate}
         È evidente che il nome del sistema, \emph{\ubvri}, discende proprio da questi cinque filtri.
+        \begin{figure}
+            \centering
+            \includegraphics[width=\imagebig, trim={0 0 0 30pt}, clip]{images/fotometria/Johnson-ubvri.jpg}
+            \caption{Le distribuzioni associate ai filtri dello standard \ubvri.}
+            \label{fig:Johnson-ubvri}
+        \end{figure}
     \subsection{Indice di colore}
+        L'uso dei filtri del sistema \ubvri\ permette all'osservatore di misurare la magnitudine che un oggetto ha se ci si restringe alla sola banda spettrale selezionata. Questo sudio fornisce informazioni importanti sullo spettro della stella osservata. Quest'ultimo, come vedremo più avanti, è ben approssimato da una planckiana sebbene presenti alcune ``irregolarità'' come la \emph{discontinuità di Balmer}. Applicare un filtro alla radiazione incidente corrisponde a fare il prodotto tra il flusso---che per ora assumiamo come planckiana---e la trasmissività di quel particolare filtro che assume valori prossimi a $\num{1}$ in un intorno della lunghezza d'onda scelta e si annulla altrove, come si vede in figura \ref{fig:Johnson-ubvri}.
+
+        A questo punto, la misura della magnitudine eseguita con un filtro è strettamente legata al flusso della stella \emph{pesato} tramite la trasmissività del filtro. Possiamo ad esempio definire il flusso associato al filtro U come:
+        \begin{equation*}
+            F_{\text{U}} = \int_{0}^{\infty} F\pqty{\lambda}T_{\text{U}}\pqty{\lambda}\dd{\lambda}
+            \mycomma
+        \end{equation*}
+        essendo $F\pqty{\lambda}$ il flusso associato alla lunghezza d'onda $\lambda$ e $T_{\text{U}}\pqty{\lambda}$ la trasmissività del filtro. Allo stesso modo si definiscono i flussi per gli altri colori e la misura di magnitudine si ottiene proprio dal logaritmo di questi flussi pesati, ad esempio:
+        \begin{equation}
+            B - V \equiv m_{\text{B}} - m_{\text{V}} = -\num{2.5}\Log\pqty{\frac{F_{\text{B}}}{F_{\text{V}}}}
+            \myperiod
+        \end{equation}
+        La quantità appena definita prende il nome di \emph{indice di colore}.
+        
+        Una proprietà importante delle planckiane è che le diverse curve associate a corpi con temperature diverse non si intersecano mai; inoltre, fissati due intervalli nell'insieme di definizione della planckiana, se supponi
 \section{Diagramma di Hertzsprung--Russel}
 \section{Estinzione e profondità ottica}
     Quanto detto fin'ora è tecnicamente vero solo se supponiamo di metterci in un contesto ideale dove tra il rivelatore e la stella c'è il vuoto perfetto, cosa naturalemte non vera. La radiazione che parte da una stella viaggia per distanze molto lunghe prima di arrivare a terra e lo spazio tra sorgente e rivelatore è tutt'altro che vuoto. I due principali ostacoli sono l'atmosfera terrestre---per le misure fatte da terra---e il mezzo interstellare, ovvero l'insieme di gas e polveri che permeano in modo non uniforme lo spazio tra i corpi celesti.
@@ -139,7 +160,7 @@
         Cerchiamo adesso di scrivere una relazione che espliciti come l'intensità specifica si trasformi in funzione delle proprietà del materiale che attraversa. Considerato un volumetto di area unitaria e spessore $\dd{x}$; la radiazione di frequenza $\nu$ che incide perpendicolarmente avrà intensità specifica $I_\nu$ e quella che lascia il volumetto sarà, approssimando al primo ordine, $I_\nu + \dd{I_\nu}$.
         \begin{figure}[h]
             \centering
-            \input{images/cubo-estinzione.tex}
+            \input{images/fotometria/cubo-estinzione.tex}
             \caption{Cubetto}
         \end{figure}
 
@@ -177,4 +198,19 @@
         \end{equation*}
         Osserviamo quindi che gli oggetti con una profondità ottica $\tau_\nu$ molto piccola sono sostanzialmente trasparenti alla luce di frequenza $\nu$; viceversa gli oggetti con una profondità ottica elevata appaiono più opachi.
         
-        Quanto detto fin'ora è valido solo nell'ipotesi in cui la radiazione incide perpendicolarmente alla superficie del materiale considerato. Purtroppo, non tutte le stelle si trovano allo zenit quando le osserviamo, quindi è necessario fare delle considerazioni ulteriori.
+        Quanto detto fin'ora è valido solo nell'ipotesi in cui la radiazione incide perpendicolarmente alla superficie del materiale considerato. Naturalmente non è sempre possibile osservare una stella allo zenit, quindi è necessario fare delle considerazioni ulteriori.
+
+        Approssimiamo l'atmosfera come fatta da strati orizzontali omogenei, ciascuno con profondità ottica $\dd{\tau_\nu}$ e indichiamo con $\vartheta$ l'angolo zenitale della stella osservata. Se la luce incide proprio all'angolo $\vartheta$, allo spessore di atmosfera $\dd{x}$ corrisponderà il tragitto reale $\dd{s} = \cos{\vartheta}\dd{x}$ che può essere invertito ottenendo $\dd{x} = \sec{\vartheta}\dd{s}$. Fissato $\vartheta$, la profondità ottica che si ottiene integrando lungo la direzione $\dd{s}$ sarà quindi $\sec{\vartheta}\dd{\tau_\nu}$ e l'intensità specifica misurata a terra sarà data da:
+        \begin{equation*}
+            I_\nu = I_{\nu}^{0} e^{-\sec{\vartheta}\tau_\nu}
+            \myperiod
+        \end{equation*}
+        \begin{figure}
+            \label{fig:strati-atmo}
+            \centering
+            \input{images/fotometria/strati-atmo.tex}
+            \caption{Ogni strato è considerato uniforme, il $\tau_\nu$ è ottenuto integrando lungo $\dd{x}$.}
+        \end{figure}
+
+        Dal momento che $\tau_{\nu}$ è una costante legata all'atmosfera, se fissiamo una stella e facciamo misurazioni a diverse ore del giorno---facendo quindi variare $\vartheta$---possiamo ottenere l'intensità specifica $I_{\nu}^0$ che la radiazione ha al momento dell'ingresso in atmosfera. Questo lavoro è semplificato dal fatto che, al posto di misurare l'intensità, l'astronomo è solito misurare la magnitudine della stella: essendo quest'ultima legata logaritmicamente alla prima, sarà possibile fare un fit lineare dei dati fin da subito.
+        
