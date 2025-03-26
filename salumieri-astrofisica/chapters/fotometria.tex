@@ -136,9 +136,14 @@
     \subsection{Estinzione atmosferica}
         L'atmosfera, per quanto sia sottile rispetto alle distanze interstellari, costituisce un ostacolo non indifferente alla propagazione della luce se consideriamo che circa la metà dei fotoni incidenti viene riflessa. Tuttavia l'interazione dipende evidentemente dalla lunghezza d'onda: quando guardiamo il sole al tramonto esso risulterà più rosso e possiamo dunque dedurre che la luce blu interagisce più facilmente con l'atmosfera rispetto a quella rosso--arancione.\footnote{È proprio per questo che il cielo appare azzurro: i fotoni con la lunghezza d'onda del blu sono diffusi e giungono ai nostri occhi da tutte le direzioni, mentre quelli arancioni--rossi proeguono in modo più coerente e fanno apparire il sole più rosso. Questo effetto è particolarmente accentuato al tramonto, dovendo la luce attraversare una porzione più spessa di atmosfera.}
 
-        Cerchiamo adesso di scrivere una relazione che espliciti come l'intensità specifica si trasformi in funzione delle proprietà del materiale che attraversa. Considerato un volumetto di area unitaria e spessore $\dd{x}$, la radiazione incidente di frequenza $\nu$ avrà intensità specifica $I_\nu$ e quella che lascia il volumetto sarà, approssimando al primo ordine, $I_\nu + \dd{I_\nu}$.
+        Cerchiamo adesso di scrivere una relazione che espliciti come l'intensità specifica si trasformi in funzione delle proprietà del materiale che attraversa. Considerato un volumetto di area unitaria e spessore $\dd{x}$; la radiazione di frequenza $\nu$ che incide perpendicolarmente avrà intensità specifica $I_\nu$ e quella che lascia il volumetto sarà, approssimando al primo ordine, $I_\nu + \dd{I_\nu}$.
+        \begin{figure}[h]
+            \centering
+            \input{images/cubo-estinzione.tex}
+            \caption{Cubetto}
+        \end{figure}
 
-        Sperimentalmente si osserva che il $\dd{I_\nu}$ è proporzionale sia all'intensità incidente che allo spessore del materiale attraversato: se si raddoppia l'intensità verranno ``persi'' il doppio dei fotoni e lo stesso avviene se si raddoppia lo spessore del materiale attraversato. Naturalmente questa quantità deve dipendere anche dalle proprietà intrinseche del materiale come la densità o la sua composizione molecolare quindi introduciamo il coefficiente di proporzionalità $\kappa_\nu$ che esprime questa dipendenza insieme a quella dalla lunghezza d'onda. Si avrà quindi:
+        Sperimentalmente si osserva che il $\dd{I_\nu}$ è proporzionale sia all'intensità $I_\nu$ incidente che allo spessore $\dd{x}$ del materiale attraversato: se si raddoppia l'intensità verranno ``persi'' il doppio dei fotoni e lo stesso avviene se si raddoppia lo spessore del materiale attraversato. Naturalmente questa quantità deve dipendere anche dalle proprietà intrinseche del materiale come la densità o la sua composizione molecolare quindi introduciamo il coefficiente di proporzionalità $\kappa_\nu$ che esprime questa dipendenza insieme a quella dalla lunghezza d'onda. Si avrà quindi:
         \begin{equation}
             \label{eq:estinzione-atmosferica-1}
             \dd{I_\nu} = - \kappa_\nu I_\nu \dd{x}
@@ -146,7 +151,7 @@
         \end{equation}
         In alcuni casi può essere utile esplicitare la dipendenza dalla densità $\rho$ ``estraendola'' da $\kappa_\nu$ e scrivendo quindi $\kappa_\nu \to \kappa_\nu\rho$; il coefficiente $\kappa_\nu$ definito esplicitando $\rho$ viene detto coefficiente \emph{di assorbimento} o \emph{di estinzione}.
 
-        Dal momento che in generale in Astrofisica non è possibile sondare tutti i punti del percorso seguito dalla radiazione, la dipendenza da $x$ nella \eqref{eq:estinzione-atmosferica-1} è relativamente inutile. All'estinzione della radiazione che giunge ai nostri strumenti infatti contribuisce la totalità del materiale attraversato e a noi tocca lavorare con questa radiazione ``a conti fatti''. Risulta quindi utile introdurre lo \emph{la profondità ottica} $\tau_\nu$ ottenuta integrando $\kappa_\nu\rho$, funzioni di $x$, lungo tutta lo spessore di materiale attraversato $L$:
+        Dal momento che in generale in Astrofisica non è possibile sondare tutti i punti del percorso seguito dalla radiazione, la dipendenza da $x$ nella \eqref{eq:estinzione-atmosferica-1} è relativamente inutile. All'estinzione della radiazione che giunge ai nostri strumenti infatti contribuisce la totalità del materiale attraversato e a noi tocca lavorare con questa radiazione ``a conti fatti''. Risulta quindi utile introdurre la \emph{profondità ottica} $\tau_\nu$ ottenuta integrando $\kappa_\nu\rho$, funzioni di $x$, lungo tutto lo spessore di materiale attraversato $L$:
         \begin{equation}
             \label{eq:spessore-ottico}
             \tau_\nu = \int_{0}^{L} \kappa_\nu\pqty{x} \rho\pqty{x} \dd{x}
@@ -172,3 +177,4 @@
         \end{equation*}
         Osserviamo quindi che gli oggetti con una profondità ottica $\tau_\nu$ molto piccola sono sostanzialmente trasparenti alla luce di frequenza $\nu$; viceversa gli oggetti con una profondità ottica elevata appaiono più opachi.
         
+        Quanto detto fin'ora è valido solo nell'ipotesi in cui la radiazione incide perpendicolarmente alla superficie del materiale considerato. Purtroppo, non tutte le stelle si trovano allo zenit quando le osserviamo, quindi è necessario fare delle considerazioni ulteriori.
