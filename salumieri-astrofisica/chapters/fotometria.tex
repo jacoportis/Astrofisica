@@ -121,22 +121,40 @@
             \label{fig:Johnson-ubvri}
         \end{figure}
     \subsection{Indice di colore}
-        L'uso dei filtri del sistema \ubvri\ permette all'osservatore di misurare la magnitudine che un oggetto ha se ci si restringe alla sola banda spettrale selezionata. Questo sudio fornisce informazioni importanti sullo spettro della stella osservata. Quest'ultimo, come vedremo più avanti, è ben approssimato da una planckiana sebbene presenti alcune ``irregolarità'' come la \emph{discontinuità di Balmer}. Applicare un filtro alla radiazione incidente corrisponde a fare il prodotto tra il flusso---che per ora assumiamo come planckiana---e la trasmissività di quel particolare filtro che assume valori prossimi a $\num{1}$ in un intorno della lunghezza d'onda scelta e si annulla altrove, come si vede in figura \ref{fig:Johnson-ubvri}.
+        L'uso dei filtri del sistema \ubvri\ permette all'osservatore di misurare la magnitudine che un oggetto ha se ci si restringe alla sola banda spettrale selezionata. Questo sudio fornisce informazioni importanti sullo spettro di una stella. Esso, come vedremo più avanti, può essere ben approssimato da una planckiana sebbene presenti alcune ``irregolarità'' come la \emph{discontinuità di Balmer}. Applicare un filtro alla radiazione incidente corrisponde a fare il prodotto tra il flusso $F\pqty{\lambda}$ e la trasmissività $T\pqty{\lambda}$ di quel particolare filtro, che assume valori prossimi a $\num{1}$ in un intorno della lunghezza d'onda scelta e si annulla altrove come si vede in \figref{fig:Johnson-ubvri}.
 
-        A questo punto, la misura della magnitudine eseguita con un filtro è strettamente legata al flusso della stella \emph{pesato} tramite la trasmissività del filtro. Possiamo ad esempio definire il flusso associato al filtro U come:
+        L'integrale di questo prodotto esteso a tutte le lunghezze d'onda prende il nome di \emph{convoluzione spettrale} e, ad esempio per il filtro U, si scrive
         \begin{equation*}
             F_{\text{U}} = \int_{0}^{\infty} F\pqty{\lambda}T_{\text{U}}\pqty{\lambda}\dd{\lambda}
-            \mycomma
+            \myperiod
         \end{equation*}
-        essendo $F\pqty{\lambda}$ il flusso associato alla lunghezza d'onda $\lambda$ e $T_{\text{U}}\pqty{\lambda}$ la trasmissività del filtro. Allo stesso modo si definiscono i flussi per gli altri colori e la misura di magnitudine si ottiene proprio dal logaritmo di questi flussi pesati, ad esempio:
+        Allo stesso modo si definiscono i flussi per gli altri colori B, V \myetc.
+
+        Se vogliamo quindi calcolare la differenza tra le magnitudini di una stessa stella osservata attraverso filtri diversi non dobbiamo fare altro che applicare la definizione \eqref{eq:magnitudine-diff}. Questa differenza prende il nome di \emph{indice di colore} e per convenzione si scrive come differenza delle due lettere, ponendo per primo il filtro con lunghezza d'onda più corta:
         \begin{equation}
             B - V \equiv m_{\text{B}} - m_{\text{V}} = -\num{2.5}\Log\pqty{\frac{F_{\text{B}}}{F_{\text{V}}}}
             \myperiod
         \end{equation}
-        La quantità appena definita prende il nome di \emph{indice di colore}.
-        
-        Una proprietà importante delle planckiane è che le diverse curve associate a corpi con temperature diverse non si intersecano mai; inoltre, fissati due intervalli nell'insieme di definizione della planckiana, se supponi
+        Questa quantità contiene importanti informazioni sulla pendenza dello spettro della stella. L'indice di colore ci dice la pendenza dello spettro nell'intervallo di lunghezze d'onda delimitato dai due filtri. Se decidiamo di approssimare lo spettro con una planckiana allora possiamo costruire la planckiana la cui pendenza corrisponde a quella data dall'indice di colore e da essa ricavare la temperatura efficace della stella.
 \section{Diagramma di Hertzsprung--Russel}
+    Uno dei più grandi contributi all'Astrofisica della fotometria è il diagramma realizzato indipendentemente da Hertzsprung e Russell agli inizi del XX Secolo. Dopo aver fatto studi fotometrici su moltissime stelle, i due tentarono di inserirle in un diagramma in funzione dei loro parametri come luminosità, temperatura, indice di colore \myetc, per capire se questi fossero correlati tra loro. In questo grafico, che oggi prende il nome di \emph{diagramma \hr}, posero l'indice di colore $B - V$ sull'asse delle ascisse e la luminosità $L$ sull'asse delle ordinate \pfigref{fig:HR-diagram-1}.\scite{SemizDYS15}
+    \begin{figure}
+        \centering
+        \includegraphics[width=\imagebig]{images/fotometria/HR-diagram-1.png}
+        \caption{Diagramma \hr\ su una popolazione di \num{22000} stelle.}
+        \label{fig:HR-diagram-1}
+    \end{figure}
+    \subsection{Sequenze e colori}
+        Osservando il diagramma notiamo subito che le stelle non assumono posizioni casuali ma tendono a raggrupparsi in alcune regioni che prendono il nome di \emph{sequenze}, la più affollata delle quali È detta \emph{sequenza principale}. Inoltre allo stesso indice di colore, che abbiamo detto essere legato alla temperatura $T_\text{eff}$, corrispondono stelle con luminosità molto diverse tra loro. In particolare dalla \emph{Legge di Stefan--Boltzmann}, $F = \sigma T^4$, sappiamo che la temperatura di un corpo nero è legata alla luminosità da
+        \begin{equation}
+            L = 4\pi R^2_\odot \sigma T^4_\text{eff}
+            \mycomma
+        \end{equation}
+        essendo $R_\odot$ il raggio del corpo nero---in questo caso la stella. Di conseguenza le stelle che hanno lo stesso indice di colore ma appartengono a sequenze diverse devono differire tra di loro in dimensione. Le sequenze nel diagramma prendono quindi nomi che ricalcano le differenti dimensioni delle stelle che le popolano, dall'alto verso il basso: I. supergiganti, II. giganti brillanti, III. giganti, IV. subgiganti, V. sequenza principale, VI. subnane e VII nane. Le stelle vengono inoltre suddivise per colore in base alla temperatura. Dalle più calde, a sinistra, alle meno calde, a destra, si hanno stelle: blu, azzurre, bianche, gialle, arancioni, rosse e brune. Le stelle all'estremo inferiore destro della sequenza principale prendono il nome di \emph{nane brune}.
+    \subsection{Utilità del diagramma \hr}
+        %
+        %
+        %
 \section{Estinzione e profondità ottica}
     Quanto detto fin'ora è tecnicamente vero solo se supponiamo di metterci in un contesto ideale dove tra il rivelatore e la stella c'è il vuoto perfetto, cosa naturalemte non vera. La radiazione che parte da una stella viaggia per distanze molto lunghe prima di arrivare a terra e lo spazio tra sorgente e rivelatore è tutt'altro che vuoto. I due principali ostacoli sono l'atmosfera terrestre---per le misure fatte da terra---e il mezzo interstellare, ovvero l'insieme di gas e polveri che permeano in modo non uniforme lo spazio tra i corpi celesti.
 
@@ -158,12 +176,12 @@
         L'atmosfera, per quanto sia sottile rispetto alle distanze interstellari, costituisce un ostacolo non indifferente alla propagazione della luce se consideriamo che circa la metà dei fotoni incidenti viene riflessa. Tuttavia l'interazione dipende evidentemente dalla lunghezza d'onda: quando guardiamo il sole al tramonto esso risulterà più rosso e possiamo dunque dedurre che la luce blu interagisce più facilmente con l'atmosfera rispetto a quella rosso--arancione.\footnote{È proprio per questo che il cielo appare azzurro: i fotoni con la lunghezza d'onda del blu sono diffusi e giungono ai nostri occhi da tutte le direzioni, mentre quelli arancioni--rossi proeguono in modo più coerente e fanno apparire il sole più rosso. Questo effetto è particolarmente accentuato al tramonto, dovendo la luce attraversare una porzione più spessa di atmosfera.}
 
         Cerchiamo adesso di scrivere una relazione che espliciti come l'intensità specifica si trasformi in funzione delle proprietà del materiale che attraversa. Considerato un volumetto di area unitaria e spessore $\dd{x}$; la radiazione di frequenza $\nu$ che incide perpendicolarmente avrà intensità specifica $I_\nu$ e quella che lascia il volumetto sarà, approssimando al primo ordine, $I_\nu + \dd{I_\nu}$.
-        \begin{figure}[h]
+
+        \begin{figure}
             \centering
             \input{images/fotometria/cubo-estinzione.tex}
             \caption{Cubetto}
         \end{figure}
-
         Sperimentalmente si osserva che il $\dd{I_\nu}$ è proporzionale sia all'intensità $I_\nu$ incidente che allo spessore $\dd{x}$ del materiale attraversato: se si raddoppia l'intensità verranno ``persi'' il doppio dei fotoni e lo stesso avviene se si raddoppia lo spessore del materiale attraversato. Naturalmente questa quantità deve dipendere anche dalle proprietà intrinseche del materiale come la densità o la sua composizione molecolare quindi introduciamo il coefficiente di proporzionalità $\kappa_\nu$ che esprime questa dipendenza insieme a quella dalla lunghezza d'onda. Si avrà quindi:
         \begin{equation}
             \label{eq:estinzione-atmosferica-1}
@@ -205,12 +223,54 @@
             I_\nu = I_{\nu}^{0} e^{-\sec{\vartheta}\tau_\nu}
             \myperiod
         \end{equation*}
+
         \begin{figure}
             \label{fig:strati-atmo}
             \centering
             \input{images/fotometria/strati-atmo.tex}
             \caption{Ogni strato è considerato uniforme, il $\tau_\nu$ è ottenuto integrando lungo $\dd{x}$.}
         \end{figure}
-
         Dal momento che $\tau_{\nu}$ è una costante legata all'atmosfera, se fissiamo una stella e facciamo misurazioni a diverse ore del giorno---facendo quindi variare $\vartheta$---possiamo ottenere l'intensità specifica $I_{\nu}^0$ che la radiazione ha al momento dell'ingresso in atmosfera. Questo lavoro è semplificato dal fatto che, al posto di misurare l'intensità, l'astronomo è solito misurare la magnitudine della stella: essendo quest'ultima legata logaritmicamente alla prima, sarà possibile fare un fit lineare dei dati fin da subito.
+    \subsection{Estinzione interstellare}
+        Come è facile immaginare, la perdità di fotoni non può essere risolta del tutto semplicemente spostando gli strumenti al di sopra dell'atmosfera. Lo spazio infatti è tutt'altro che vuoto e le nubi di gas e polveri presenti lungo il cammino della radiazione, che vanno sotto il nome di \emph{mezzo interstellare}, contribuiscono agli effetti di estinzione. [Inserire foto nubi scure].
+
+        Una trattazione simile a quella atmosferica può essere fatta per il mezzo interstellare, con alcuni opportuni aggiustamenti. Per cominiciare la densità della materia che compone le nubi è di diversi ordini di grandezza più bassa di quella che compone l'atmosfera, di conseguenza anziché usare la densità di massa, misurata in $\unit{kg.m^{-3}}$ o in $\unit{g.cm^{-3}}$, si preferisce usare la densità di \emph{grani}---ovvero particelle, granelli microscopici di polvere o ciò che di volta in volta appare opportuno---data dal numero di grani per ogni $\unit{m^3}$ o in $\unit{cm^3}$, indicata dalla lettera $n\pqty{x}$.
         
+        In modo del tutto analogo a prima, in ogni strato infinitesimo di mezzo interstellare inciderà una radiazione con intensità specifica $I_\nu$ e verrà trasmessa una $I_\nu + \dd{I_\nu}$ data da:
+        \begin{equation}
+            \dd{I_\nu} = - n\kappa_{\nu}I_{\nu}\dd{x}
+            \myperiod
+        \end{equation}
+        Possiamo anche in questo caso definire una profondità ottica $\tau_\nu$, supponendo che il coefficiente di assorbimento $\kappa_\nu$ sia lo stesso per tutta la nube:
+        \begin{equation*}
+            \tau_\nu\pqty{x}
+            = \kappa_\nu\int_{0}^{x}n\pqty{x'}\dd{x'}
+            = \kappa_\nu N\pqty{x}
+            \myperiod
+        \end{equation*}
+        In questo caso scegliendo di integrare da $0$ a un certo punto $x$ all'interno della nube possiamo definire la funzione $N\pqty{x}$ che dà la densità ``superficiale'' di grani che si otterrebbe se si immaginasse di comprimere in uno strato infinitamente sottile tutta la materia contenuta nell'intervallo $\bqty{0,x}$. Anche in questo caso si ottiene una relazione del tipo
+        \begin{equation}
+            \label{eq:estinzione-interstellare-1}
+            I_\nu = I_\nu^0 e^{-\tau_\nu}
+            \mycomma
+        \end{equation}
+        e tramite il rapporto delle intensità $I_\nu$ e $I_\nu^0$---uguale al rapporto di $F_\nu$ e $F_\nu^0$---si può conoscere il ``calo'' di magnitudine dovuto alla presenza del mezzo interstellare:
+        \begin{equation}
+            \label{eq:estinzione-interstellare-2}
+            A_\nu
+            \equiv m_\nu - m_\nu^0
+            = -2.5\Log\!\pqty{\frac{I_\nu}{I_\nu^0}}
+            \myperiod
+        \end{equation}
+        La quantità $A_\nu$ così definita prende il nome di \emph{tasso di assorbimento specifico} o \emph{absorption rate} associato alla frequenza $\nu$.
+
+        Sostituendo la \eqref{eq:estinzione-interstellare-1} nella \eqref{eq:estinzione-interstellare-2} possiamo vedere che il tasso di assorbimento è strettamente legato alla profondità ottica:
+        \begin{equation*}
+            A_\nu
+            = \num{-2.5}\Log e^{-\tau_\nu}
+            = \num{2.5}\,\tau_\nu\Log e
+            \simeq \num{1.086}\,\tau_\nu
+            \myperiod
+        \end{equation*}
+
+        Dalla dipendenza di $\tau_\nu$ dalla frequenza $\nu$ deduciamo che il tasso di assorbimento dipende dalla lunghezza d'onda. In particolare si osserva che le lunghezze d'onda minori sono estinte più facilmente di quelle maggiori, di conseguenza per osservare stelle più lontane è opportuno osservare nelle lunghezze d'onda tra infrarosso e radio. In questo modo appariranno stelle che non si vedono nel visibile perché le frequenze di quell'intervallo vengono completamente assorbite dal mezzo interstellare.

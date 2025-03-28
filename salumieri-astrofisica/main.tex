@@ -16,7 +16,6 @@
 \usepackage{physics}                % cose utili per fare matematica e fisica
 \usepackage[align]{tensor}          % =======================================
 
-
 \usepackage{graphicx}               % per le foto
 \usepackage{tikz}                   % per altre immagini
     \usetikzlibrary{arrows.meta}
@@ -40,7 +39,7 @@
 
 \usepackage{xurl}
 \usepackage{csquotes}
-\usepackage[backend=biber, style=numeric-comp]{biblatex}
+\usepackage[backend=bibtex, style=numeric-comp]{biblatex}
     \addbibresource{misc/references.bib}
 
 \usepackage{misc/mybookenv}
@@ -57,7 +56,13 @@
 
 \newcommand{\ccd}{CCD}
 \newcommand{\ubvri}{UBVRI}
+\newcommand{\hr}{H--R}
 \newcommand{\imagebig}{0.8\textwidth}
+\newcommand{\initcolor}{purple}
+
+\newcommand{\figref}[1]{Fig.~\ref{#1}}
+\newcommand{\pfigref}[1]{(\figref{#1})}
+\newcommand{\scite}[1]{\textsuperscript{\cite{#1}}}
 
 \begin{document}
     \makeatletter
@@ -77,6 +82,6 @@
         \input{chapters/sole}
 
     \backmatter
-        %\printbibliography
+        \printbibliography
 
 \end{document}
