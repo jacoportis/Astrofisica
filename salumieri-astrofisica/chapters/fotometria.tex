@@ -1,8 +1,15 @@
 \chapter{Fotometria}\label{ch:fotometria}
 \epigraph{\itshape La fotometria è come voler indovinare due numeri conoscendone la somma.}{F. Pinguino}
-\noindent\yinitpar{\color{purple}C}\textsc{ome già detto}, per l'astronomo è importante conoscere le proprietà della radiazione proveniente dai corpi celesti. I nostri strumenti di osservazione come telescopi e sensori ci permettono di misurare la radiazione incidente ma questo non basta, il nostro obiettivo è quello di interpretare le quantità che misuriamo e costruire dei modelli fisici che le spieghino.
+\noindent\yinitpar{\color{purple}C}\textsc{ome già detto}, per l'astronomo è importante conoscere le proprietà della radiazione proveniente dai corpi celesti che osserva. I nostri strumenti di osservazione come telescopi e sensori ci consentono di misurare la radiazione incidente, ma questo non basta. Il nostro obiettivo è quello di interpretare le quantità che misuriamo e costruire dei modelli fisici che le spieghino.
 \section{Spettro stellare e radiazione di corpo nero}
-    Se prendiamo un sensore quanto più ideale possibile e lo puntiamo verso il sole, l'intensità della radiazione incidente in funzione della lunghezza d'onda avrà un'andamento come quello in
+    \begin{figure}
+        \centering
+        \includegraphics[width=\imagebig]{images/fotometria/solar-spectrum-2.png}
+        \caption{Spettro del Sole misurato al livello del mare e fuori dall'atmosfera. La linea tratteggiata è la radiazione di corpo nero a \SI{6000}{\kelvin}}
+        \label{fig:solar-spectrum-1}
+    \end{figure}
+    Se prendiamo un sensore---quanto più ideale possibile---e lo puntiamo verso il Sole, l'intensità della radiazione incidente in funzione della lunghezza d'onda avrà un'andamento come quello in \figref{fig:solar-spectrum-1}.\scite{Zhang-DC-06} Come è evidente, la distribuzione non solo è fortemente asimmetrica ma presenta diverse irregolarità che variano in base alla quota: lo spettro misurato fuori dall'atmosfera ha un andamento molto meno frastagliato che al livello del mare
+    
 \section{Intensità, flusso, magnitudini}
     Introduciamo le grandezze più importanti della fotometria. Come sappiamo, la radiazione elettromagnetica trasporta un'energia; supponiamo di avere quindi della radiazione che attraversa una superficie $\dd A$ il cui vettore normale forma un angolo $\vartheta$ con la direzione di propagazione. Essa, lasciando la superficie ``alle sue spalle'', si manterrà all'interno di un angolo solido $\dd\Omega$ che stacca dalla normale alla superficie lo stesso angolo $\dd\vartheta$. In generale le radiazione può contenere qualisai lunghezza d'onda: consideriamo inizialmente la radiazione nelle frequenze comprese nell'intervallo  $\bqty{\nu,\nu + \dd\nu}$. L'energia infinitesima che la radiazione trasporta nella regione $\dd\Omega$ sarà quindi $\dd E_\nu \propto \dd t \dd\nu \cos\vartheta\dd A$. Chiamiamo \emph{intensità specifica} la costante di proporzionalità, $I_\nu$, e scriviamo:
     \begin{equation}
@@ -139,7 +146,7 @@
         \end{equation}
         Questa quantità contiene importanti informazioni sulla pendenza dello spettro della stella. L'indice di colore ci dice la pendenza dello spettro nell'intervallo di lunghezze d'onda delimitato dai due filtri. Se decidiamo di approssimare lo spettro con una planckiana allora possiamo costruire la planckiana la cui pendenza corrisponde a quella data dall'indice di colore e da essa ricavare la temperatura efficace della stella.
 \section{Diagramma di Hertzsprung--Russel}
-    Uno dei più grandi contributi all'Astrofisica della fotometria è il diagramma realizzato indipendentemente da Hertzsprung e Russell agli inizi del XX Secolo. Dopo aver fatto studi fotometrici su moltissime stelle, i due tentarono di inserirle in un diagramma in funzione dei loro parametri come luminosità, temperatura, indice di colore \myetc, per capire se questi fossero correlati tra loro. In questo grafico, che oggi prende il nome di \emph{diagramma \hr}, posero l'indice di colore $B - V$ sull'asse delle ascisse e la luminosità $L$ sull'asse delle ordinate \pfigref{fig:HR-diagram-1}.\scite{SemizDYS15}
+    Uno dei più grandi contributi all'Astrofisica della fotometria è il diagramma realizzato indipendentemente da Hertzsprung e Russell agli inizi del XX Secolo. Dopo aver fatto studi fotometrici su moltissime stelle, i due tentarono di inserirle in un diagramma in funzione dei loro parametri come luminosità, temperatura, indice di colore \myetc, per capire se questi fossero correlati tra loro. In questo grafico, che oggi prende il nome di \emph{diagramma \hr}, posero l'indice di colore $B - V$ sull'asse delle ascisse e la luminosità $L$ sull'asse delle ordinate \pfigref{fig:HR-diagram-1}.\scite{Semiz-DS-15}
     \begin{figure}
         \centering
         \includegraphics[width=\imagebig]{images/fotometria/HR-diagram-1.png}
