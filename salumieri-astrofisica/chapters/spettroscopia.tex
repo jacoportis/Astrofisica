@@ -1,16 +1,16 @@
 \chapter{Spettroscopia}
 %\epigraph{Persino gli spettri scopano.}{Anonimo}
-Tramite la fotometria abbiamo appreso come misurare la radiazione elettromagnetica in bande larghe circa \SI{1500}{\angstrom}. Questo ci permette di risalire alle proprietà generali della sorgente che la emette, come la temperatura e la distanza. Tuttavia, come abbiamo visto, tra le sorgenti e i nostri strumenti si trovano oggetti materiali che la luce deve attraversare per raggiungerci.
+Tramite la fotometria abbiamo appreso come misurare la radiazione elettromagnetica in bande larghe di \SI{1500}{\angstrom} o strette di \SI{150}{\angstrom}. Questo ci permette di risalire alle proprietà generali della sorgente che la emette, come la temperatura e la distanza. Tuttavia, come abbiamo visto, tra le sorgenti e i nostri strumenti si trovano oggetti materiali che la luce deve attraversare per raggiungerci.
 
 Proviamo per un attimo a fare un ragionamento al contrario: immaginiamo di avere una sorgente di cui conosciamo tutte le caratteristiche principali---ad esempio proprio un corpo nero---e interponiamo, tra noi e la sorgente, della materia non completamente opaca e non completamente ionizzata. Possiamo ad esempio confrontare la luce che arriva ai nostri strumenti con la distribuzione nota prodotta dal corpo nero, al fine capire come la radiazione interagisce con la materia e dedurre da ciò le sue proprietà.
 \section{Spettrografi}\label{s:spettrografi}
     Per cominciare, per poter misurare la radiazione in modo più dettagliato servono strumenti appositi. Per gli studi di fotometria infatti possiamo ``accontentarci'' di fotografare una stella con un sensore che sia sensibile, più o meno allo stesso modo, a tutte le lunghezze d'onda cambiando di volta in volta i filtri a banda larga o stretta per scegliere quali fotoni far passare. Se invece vogliamo fare uno studio più dettagliato a banda ``strettissima'' dovremmo cambiare uno alla volta decine di migliaia di filtri---uno per ciascun intervallo di ampiezza $\dd{\nu}$ o $\dd{\lambda}$---a meno che non decidiamo di ricorrere a metodi più specializzati.
 
-    Gli strumenti utilizzati in spettroscopia si chiamano \emph{spettrografi} e si basano sulla capacità di alcuni apparati di \emph{disperdere} la luce, come prismi e reticoli di diffrazione. I primi deviano il fascio di luce incidente di un angolo che dipende dalla lunghezza d'onda permettendo di separare spazialmente fasci di luce di colori diversi. I reticoli invece sfruttano i fenomeni di interferenza tra fasci di luce che passano per fenditure diverse formando picchi ad angoli che dipendono anch'essi dalla lunghezza d'onda dei colori che compongono il fascio di partenza.
+    Gli strumenti utilizzati in spettroscopia si chiamano \emph{spettrografi} e si basano sulla capacità di alcuni apparati di \emph{disperdere} la luce, ovvero separarla nei colori che la compongono, come prismi e reticoli di diffrazione. I primi deviano la luce incidente di un angolo che dipende dalla lunghezza d'onda, permettendo di separare spazialmente fasci di luce di colori diversi; i reticoli invece sfruttano i fenomeni di interferenza tra fasci di luce che incidono sul reticolo formando picchi di interferenza costruttiva ad angoli che dipendono dalla lunghezza d'onda.
 
-    Dopo aver separato i colori di un fascio di luce tramite un \emph{dispersore}, possiamo intercettare i fasci con un sensore e fare una ``foto'': quello che si vedrà sarà una collezione di righe più o meno large e separate tra loro. Introduciamo quindi dei parametri che ci permettano di quantificare le proprietà di uno spettrografo: il \emph{potere dispersivo} e il \emph{potere risolutivo}.
+    Dopo aver separato i colori di un fascio di luce tramite un \emph{dispersore}, possiamo intercettare i fasci con uno schermo o un sensore e fare una ``foto'': quello che si vedrà sarà una collezione di righe più o meno large e separate tra loro. Introduciamo quindi dei parametri che ci permettano di qualificare le proprietà di uno spettrografo: il \emph{potere dispersivo} e il \emph{potere risolutivo}.
     
-    Il potere dispersivo è la capacità dello spettrografo di disperdere, ovvero separare spazialmente, le lunghezze d'onda. Maggiore è il potere dispersivo più sarà facile distinguere righe vicine nello spettro in quanto vengono separate maggiormente sul sensore. Il potere risolutivo invece è, come per i telescopi, la capacità dello strumento di risolvere due picchi distinti vicini tra loro. Infatti per la diffrazione dovuta alle dimensioni finite delgli strumenti\footnote{Questa è una caratteristica legata puramente alla geometria degli strumenti che non c'entra con l'allargamento di riga dovuto alle relazioni di indeterminazione [VEDI par giusto].} le bande di emissione hanno uno spessore finito e la risoluzione di due picchi vicini è un problema del tutto analogo alla risoluzione dei dischi di Airy di due stelle. Possiamo quindi adottare il criterio di Rayleigh e affermare che due picchi sono distinguibili se la loro \FWHM\ è minore della distanza tra le due righe. Possiamo quindi definire il potere risolutivo $R$ numericamente come
+    Il potere dispersivo è la capacità dello spettrografo di disperdere, ovvero separare spazialmente, le lunghezze d'onda. Maggiore è il potere dispersivo più sarà facile distinguere righe vicine nello spettro in quanto vengono separate maggiormente sullo schermo. Il potere risolutivo invece è, come per i telescopi, la capacità dello strumento di risolvere due picchi distinti vicini tra loro. Infatti per la diffrazione dovuta alle dimensioni finite delgli strumenti\footnote{Questa è una caratteristica legata puramente alla geometria degli strumenti che non c'entra con l'allargamento di riga dovuto alle relazioni di indeterminazione [VEDI par giusto].} le bande di emissione hanno uno spessore finito e la risoluzione di due picchi vicini è un problema del tutto analogo alla risoluzione dei dischi di Airy di due stelle. Possiamo quindi adottare il criterio di Rayleigh e affermare che due picchi sono distinguibili se la loro \FWHM\ è minore della distanza tra le due righe. Definiamo il potere risolutivo $R$ numericamente come
     \begin{equation}
         R = \frac{\lambda}{\Delta\lambda}
         \mycomma
@@ -19,9 +19,9 @@ Proviamo per un attimo a fare un ragionamento al contrario: immaginiamo di avere
 
     Avere un potere risolutivo e dispersivo elevato non è importante solo per distinguere picchi vicini: spesso può essere utile usare uno spettrografo per determinare lo spostamento di una riga a causa dell'effetto doppler. Tuttavia tale spostamento può risultare troppo piccolo per essere rivelato consistentemente, come nei casi in cui la lunghezza d'onda originale $\lambda$ e quella spostata $\lambda + \dd{\lambda}$ ricadono nello stesso pixel del sensore.
 
-    Per aumentare il potere dispersivo dello strumento, la fortuna---o meglio l'ottica---è apparentemente dalla nostra parte se usiamo un reticolo di diffrazione. I reticoli infatti producono diverse figure di interferenza a \emph{ordini} diversi e le figure di ordine maggiore risultano più disperse. Tuttavia a un aumento di separazione spaziale in questo caso corrisponde una diminuzione della luminosità delle righe e una minore nitidezza dell'immagine, dal momento che la maggior parte della luce convoglia nel primo ordine.
+    Per aumentare il potere dispersivo dello strumento, la fortuna---o meglio l'ottica---è apparentemente dalla nostra parte se usiamo un reticolo di diffrazione. I reticoli infatti producono diverse figure di interferenza a \emph{ordini} diversi e le figure di ordine maggiore risultano più disperse. Tuttavia a un aumento di separazione spaziale in questo caso corrisponde una diminuzione della luminosità delle righe e una minore nitidezza dell'immagine, dal momento che la maggior parte della luce convoglia nella figura al primo ordine.
     
-    Per risolvere questo problema è stato inventato un nuovo tipo di reticolo di diffrazione in riflessione costituito da un blocco di vetro plasmato a gradini con precisione micrometrica e rivestito con uno strato riflettetnte, come si vede in \figref{fig:grating-spectrographer}. In questo tipo di spettrografo l'ordine più luminoso è anche quello con la maggiore dispersione, rendendolo molto più efficiente e preciso del reticolo in trasmissione.
+    Per risolvere questo problema è stato inventato un nuovo tipo di reticolo di diffrazione in riflessione, costituito da un blocco di vetro plasmato a gradini con precisione micrometrica e rivestito con uno strato riflettetnte come esemplificato in \figref{fig:grating-spectrographer}. In questo tipo di spettrografo l'ordine più luminoso è anche quello con la maggiore dispersione, risultando molto più efficiente e preciso del reticolo in trasmissione.
     \begin{figure}
         \centering
         %\includegraphics[width=\imagebig, trim={0 0 0 80pt}, clip]{images/spettroscopia/spectrograph.svg}
@@ -58,6 +58,8 @@ Proviamo per un attimo a fare un ragionamento al contrario: immaginiamo di avere
         Questo tipo di emissione viene rivelata come una \emph{riga} 
         %\cfr{s:spettrografi}
         a una o più lunghezze d'onda ben precise corrispondenti proprio alle frequenze $\nu$, che sono determinate dal materiale: le differenze tra i vari livelli energetici cambiano da atomo ad atomo e da molecola a molecola, quindi le righe emesse da materiali diversi saranno in generale diverse. Se allora osserviamo una nube che emette per collisioni, possiamo confrontare le righe che riveliamo con gli spettri realizzati in laboratorio fino a trovare una corrispondenza e ``indovinare'' la composizione chimica della nube.
+    \subsection{Scattering e transizioni}
+        I fenomeni di scattering 
 \section{Equazione del trasporto radiativo}
     Come abbiamo visto, esistono molteplici fenomeni che possono alterare in contemporanea lo spettro della radiazione che attraversa un materiale. e in Astrofisica si tende a raggruppare tutti questi fenomeni per lunghezza d'onda piuttosto che per tipo. Se nel nostro spettro è presente una riga in assorbimento non siamo in grado di sapere a priori quale fenomento ha fatto sparire tale riga, quindi piuttosto andiamo a vedere come l'intensità della radiazione varia al variare della lunghezza d'onda. Costruiamo adesso un'equazione che ci permetta di formalizzare quanto detto fin'ora.
     \subsection{Estinzione e opacità}
@@ -156,8 +158,50 @@ Proviamo per un attimo a fare un ragionamento al contrario: immaginiamo di avere
         \myperiod
     \end{equation*}
     Nel caso particolare $\tau_\nu^1 = 0$ e $\tau_\nu^2 = \tau_\nu$, possiamo scrivere:
+    \begin{equation}
+        \label{eq:tr-rad-int}
+        I_\nu\pqty{0} = e^{-\tau_\nu}I_{\nu}\pqty{\tau_\nu} + \int_0^{\tau_\nu} e^{-\tau_{\nu}'} S_{\nu}\pqty{\tau_{\nu}'} \dd{\tau_{\nu}'}
+        \mycomma
+    \end{equation}
+    dove $I_\nu\pqty{0}$ è l'intensità specifica totale emergente dalla somma dei contributi di tutti gli strati: i fotoni che partono dallo strato di profondità ottica $\tau_\nu$ incidono sullo strato successivo, essi vengono attenuati esponenzialmente e ad essi si aggiungono i fotoni introdotti dall'emissione negli strati precedenti. Si prosegue così fino ad arrivare fuori dall'atmosfera, il punto $\tau_\nu = 0$, da cui noi facciamo invece cominciare l'integrazione.
+
+    L'integrale che compare nella \eqref{eq:tr-rad-int} può essere risolto numericamente tenendo conto del fatto che se la profonodità ottica del mezzo è particolarmente elevata possiamo fermarci quando i contributi sono pressoché nulli.
+
+    Un'utile approssimazione che viene fatta in Astrofisica è quella di supporre che la sorgente della radiazione abbia spessore infinito, coerentemente col fatto che lo spessore delle atmosfere stellari è estremamente ridotto se confrontato al diametro della stella: ciò equivale matematicamente a fare il limite della \eqref{eq:tr-rad-int} per $\tau_\nu \to +\infty$. Se supponiamo che
     \begin{equation*}
-        I_\nu^0 = e^{-\tau_\nu}I_{\nu}\pqty{\tau_\nu} + \int_0^{\tau_\nu} e^{-\tau_{\nu}'} S_{\nu}\pqty{\tau_{\nu}'} \dd{\tau_{\nu}'}
-    \end{equation*}   
+        \lim_{\tau_\nu \to +\infty} e^{-\tau_\nu}I_{\nu}\pqty{\tau_\nu} = 0
+        \mycomma
+    \end{equation*}
+    che è lecito in quanto una sorgente reale non può emettere radiaizone infinita, la \eqref{eq:tr-rad-int} diventa
+    \begin{equation}
+        \label{eq:tr-rad-lim}
+        I_\nu\pqty{0} = \int_0^{+\infty} e^{-\tau_{\nu}'} S_{\nu}\pqty{\tau_{\nu}'} \dd{\tau_{\nu}'}
+        \myperiod
+    \end{equation}
+    Il significato fisico di questo risultato è che la radiazione che incide sul primo strato di atmosfera sostanzialmente non dà nessun contributo alla radiazione che osserviamo al di fuori di essa: all'esterno dell'atmosfera, dove al solito $\tau_\nu = 0$, giungono solo i contributi in emissione dovuti all'atmosfera stessa. Questo modello descrive sufficientemente bene i casi reali in cui si ha $\tau_\nu \gg 1$, ovvero quando la materia è particolamrnete densa e la probabilità di interazione fotone--materia è circa uguale a \num{1}. In questi casi si dice che il plasma è \emph{otticamente spesso} e quindi opaco alla frequenza $\nu$.
+
+    Nel caso opposto in cui si ha $\tau_\nu \ll 1$ l'approssimazione non vale più. Per $\tau_\nu \to 0$, l'esponenziale tende a \num{1} e la \eqref{eq:tr-rad-int} si semplifica in
+    \begin{equation*}
+        I_\nu\pqty{0} = I_{\nu}\pqty{\tau_\nu} + \int_0^{\tau_\nu} e^{-\tau_{\nu}'} S_{\nu}\pqty{\tau_{\nu}'} \dd{\tau_{\nu}'}
+        \myperiod
+    \end{equation*}
+    Questo significa che la radiazione incidente non viene estinta e ad essa si aggiungono i contributi in emissione di ogni strato. In questi casi si parla di plasma \emph{otticamente sottile}.
+
+    Se ci soffermiamo un attimo a osservare la \eqref{eq:tr-rad-lim} notiamo che formalmente ricorda una trasformata integrale, in particolare la trasformata di Laplace. Data una funzione $f$ della variabile $t$, la sua trasformata di Laplace unilatera\footnote{Ovvero integrando su $\left[0,+\infty\right[$ piuttosto che su $\left]-\infty,+\infty\right[$.} si scrive:
+    \begin{equation*}
+        \mcL\qty{f}\pqty{s} = \int_0^{+\infty} e^{-st} f\pqty{t} \dd{t}
+        \myperiod
+    \end{equation*}
+    Quindi l'intensità $I_\nu$ calcolata nel punto $\tau_\nu = 0$ corrisponde alla trasformata di Laplace della funzione sorgente $S_\nu$,
+    \begin{equation*}
+        \bqty{I_{\nu}\pqty{0}}\pqty{s} = \int_0^{+\infty} e^{-s\tau_\nu} S_\nu\pqty{\tau_\nu} \dd{\tau_\nu}
+        \mycomma
+    \end{equation*}
+    calcolata per $s = 1$.
 \section{Spettri stellari}
-\section{Equazione di Saha}
+    Un problema non indifferente dell'equazione del trasporto è che per poterla effettivamente risolvere sarebbe necessario conoscere le quantità $S_\nu$, $\tau_\nu$, $\chi_\nu$ \myetc, conoscenza che all'astronomo manca. Come già detto altre volte, noi possiamo misurare solo il ``risutlato finale'' dell'integrazione e non gli andamenti delle funzioni punto per punto. Quello che possiamo fare quindi è osservare gli spettri misurati e invertire ``a tentativi'' le relazioni per trovare delle funzioni che spieghino i dati.
+
+    Osserviamo alcuni spettri [inserire foto fantasmini paurosi]
+    
+
+\section{Equazione di Saha??}
